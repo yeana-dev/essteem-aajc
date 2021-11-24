@@ -9,6 +9,11 @@ export default {
       type: "string",
     },
     {
+      name: "link",
+      title: "Link",
+      type: "url",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",
@@ -28,15 +33,7 @@ export default {
     {
       name: "bio",
       title: "Bio",
-      type: "array",
-      of: [
-        {
-          title: "Block",
-          type: "block",
-          styles: [{ title: "Normal", value: "normal" }],
-          lists: [],
-        },
-      ],
+      type: "text",
     },
   ],
   preview: {
