@@ -1,10 +1,16 @@
 import React from 'react'
+import { SliderData } from './SilderData';
 
 const ImageSilder = () => {
     return (
-        <div>
-            Images 
-        </div>
+        <>
+           {SliderData.map((slide, index) =>{
+               return <img src={slide.image} alt = "travel image" />;
+
+               
+
+           })}
+        </>
     )
 };
 
