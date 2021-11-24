@@ -1,6 +1,6 @@
 import "./App.css";
-import HomeAffiliates from "./components/HomeAffiliates";
-const HomeAffiliates = [
+import HomeIcons from "./components/HomeIcons";
+const homeIcons = [
 	{
 		location: 'Washington D.C.',
 		name: 'Asian Americans Advancing Justice |AAJC',
@@ -51,10 +51,14 @@ Advancing Justice – LA is based in downtown Los Angeles, with satellite office
 	},
 ];
 function App() {
-  return <div className="App"></div>;
-
-
-
+ 	return (
+		<div className='App'>
+			<header>
+				<h1>Title</h1>
+			</header>
+			<HomeIcons homeIcons={homeIcons} />
+		</div>
+	);
 }
 
 export default App;
