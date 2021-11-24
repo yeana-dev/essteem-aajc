@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import sanityClient from "../../Client";
-// import NewsCard from "../../components/NewsCard/NewsCard";
+import NewsCard from "../../components/NewsCard/NewsCard";
 
 export default function News(props) {
   const [news, setNews] = useState(null);
@@ -26,5 +26,9 @@ export default function News(props) {
       .catch(console.error);
   }, []);
   console.log(news);
-  return <div></div>;
+  return (
+    <div>
+      {news && news.map((each) => <NewsCard key={each._id} news={each} />)}
+    </div>
+  );
 }
