@@ -1060,6 +1060,11 @@
     "tiny-warning" "^1.0.3"
     "tslib" "^2.3.0"
 
+"@react-icons/all-files@^4.1.0":
+  "integrity" "sha512-hxBI2UOuVaI3O/BhQfhtb4kcGn9ft12RWAFVMUeNjqqhLsHvFtzIkFaptBJpFDANTKoDfdVoHTKZDlwKCACbMQ=="
+  "resolved" "https://registry.npmjs.org/@react-icons/all-files/-/all-files-4.1.0.tgz"
+  "version" "4.1.0"
+
 "@rexxars/eventsource-polyfill@^1.0.0":
   "integrity" "sha512-YnrybIoM9WFqmeK1D8p/gutqjJnmXCVFWAU3ucka9M7Dzpen3f2Dy4KsC6k1wDHrCtHQuUHHwZovh3i5UPDaZw=="
   "resolved" "https://registry.npmjs.org/@rexxars/eventsource-polyfill/-/eventsource-polyfill-1.0.0.tgz"
@@ -7933,6 +7938,11 @@
   "integrity" "sha512-NRlRo0RPxWRMQT7osj8UCBSSXsGOxhF1pre84ildhuft5S2U382NOs7tg29osWSjbO90L2a3VTCqadA/LnAzHQ=="
   "resolved" "https://registry.npmjs.org/react-icon-base/-/react-icon-base-2.1.2.tgz"
   "version" "2.1.2"
+
+"react-icons@^4.3.1":
+  "integrity" "sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ=="
+  "resolved" "https://registry.npmjs.org/react-icons/-/react-icons-4.3.1.tgz"
+  "version" "4.3.1"
 
 "react-intersection-observer@^8.32.0":
   "integrity" "sha512-iZK+u2z2Jpw9ez+cEFR4Hts3eNtW9XiEhwy2wGgKVe+pRUboWko827kvmyb7BtQUeX+/kRcTeHpw6uWSLyI57w=="

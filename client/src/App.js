@@ -1,5 +1,6 @@
 import "./App.css";
 import ImageSilder from "./components/Carousel/ImageSilder";
+import { SliderData } from "./components/Carousel/SilderData";
 import HomeIcons from "./components/HomeIcons";
 const homeIcons = [
 	{
@@ -54,7 +55,7 @@ Advancing Justice – LA is based in downtown Los Angeles, with satellite office
 function App() {
  	return (
 		<div className='App'>
-			<ImageSilder />
+			<ImageSilder slides ={SliderData}/>
 			<header>
 				<h1>Title</h1>
 			</header>
