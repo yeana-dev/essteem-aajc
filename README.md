@@ -164,10 +164,10 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Yeana Cho 👩🏻‍💻 [Github](https://twitter.com/yeana-dev) [LinkedIn](https://www.linkedin.com/in/yeanacho/)
-Joy Liu 👩🏻‍💻 [Github](https://github.com/jhuangliu)
-Hyun Ju Kim 👩🏻‍🎨 [LinkedIn](https://www.linkedin.com/in/hyun-ju-kim/)
-Jessica Chung 👩🏻‍🎨 [LinkedIn](https://www.linkedin.com/in/jessicagchung/)
+- Yeana Cho 👩🏻‍💻 [Github](https://twitter.com/yeana-dev) [LinkedIn](https://www.linkedin.com/in/yeanacho/)
+- Joy Liu 👩🏻‍💻 [Github](https://github.com/jhuangliu)
+- Hyun Ju Kim 👩🏻‍🎨 [LinkedIn](https://www.linkedin.com/in/hyun-ju-kim/)
+- Jessica Chung 👩🏻‍🎨 [LinkedIn](https://www.linkedin.com/in/jessicagchung/)
 
 <p align="right"><a href="#top">back to top</a></p>
 
