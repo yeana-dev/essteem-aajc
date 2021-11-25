@@ -21,21 +21,19 @@ top: 50%;
 right: 32px;
 font-size: 3rem;
 color: magenta;
-z-index: 10;
+z-index: 100;
 cursor: pointer;
 user-select: none;
 }
 
 .left-arrow
 {
-display: flex;
-justify-content: flex-end; 
-position: relative;
+position: absolute;
 top: 50%;
 left: 32px;
 font-size: 3rem;
 color: magenta;
-z-index: 10;
+z-index: 100;
 cursor: pointer;
 user-select: none;
 
