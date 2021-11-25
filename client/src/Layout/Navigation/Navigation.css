@@ -1,0 +1,8 @@
+.wide-menu .active {
+  color: black;
+}
+
+.mobile-menu .active {
+  background-color: black;
+  color: white;
+}
