@@ -1,70 +1,103 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./Navigation.css";
+
+import logo from "../../assets/advancing-justice-logo.png";
 
 export default function Navigation() {
   const [toggle, setToggle] = useState(false);
+
+  // Enable navbar collapse onClick on mobile-sized screen
+  const menu = document.getElementById("menu");
+  const hide = () => menu.classList.toggle("hidden");
+
   return (
-    <nav class="bg-white shadow-lg">
-      <div class="max-w-6xl mx-auto px-4">
-        <div class="flex justify-between">
-          <div class="flex space-x-7">
-            <div>
-              <a href="#" class="flex items-center py-4 px-2">
-                <span class="font-semibold text-gray-500 text-lg">
-                  Navigation
-                </span>
-              </a>
-            </div>
-
-            <div class="hidden md:flex items-center space-x-1">
-              <a
-                href=""
-                class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold "
-              >
-                Home
-              </a>
-              <a
-                href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Services
-              </a>
-              <a
-                href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                About
-              </a>
-              <a
-                href=""
-                class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-              >
-                Contact Us
-              </a>
-            </div>
-          </div>
-
-          <div class="hidden md:flex items-center space-x-3 ">
-            <a
-              href=""
-              class="py-2 px-2 font-medium text-gray-500 rounded hover:bg-green-500 hover:text-white transition duration-300"
-            >
-              Log In
-            </a>
-            <a
-              href=""
-              class="py-2 px-2 font-medium text-white bg-green-500 rounded hover:bg-green-400 transition duration-300"
-            >
-              Sign Up
+    <nav className="bg-white shadow-lg">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex space-x-7 justify-between">
+          <div>
+            <a href="#" className="flex items-center py-4 px-2">
+              <img src={logo} alt="" width="250" />
             </a>
           </div>
 
-          <div class="md:hidden flex items-center">
+          <div className="hidden md:flex items-center space-x-4 wide-menu">
+            <NavLink
+              to="/"
+              className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+            >
+              Home
+            </NavLink>
+
+            <div class="relative group">
+              <button class="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300">
+                <span>About Us</span>
+              </button>
+              <div class="absolute z-10 hidden bg-grey-200 group-hover:block">
+                <div class="px-2 pt-2 pb-4 bg-gray-200 shadow-lg rounded-lg w-52 ">
+                  <div class="grid grid-cols-1 ">
+                    <NavLink
+                      to="/aboout-us/atlanta"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                    >
+                      Atlanta
+                    </NavLink>
+                    <NavLink
+                      to="/aboout-us/chicago"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                    >
+                      Chicago
+                    </NavLink>
+                    <NavLink
+                      to="/aboout-us/la"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                    >
+                      Los Angeles
+                    </NavLink>
+                    <NavLink
+                      to="/aboout-us/sanfrancisco"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                    >
+                      San Francisco
+                    </NavLink>
+                    <NavLink
+                      to="/aboout-us/dc"
+                      className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+                    >
+                      Washington D.C.
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <NavLink
+              to="/news"
+              className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+            >
+              News
+            </NavLink>
+            <NavLink
+              to="/events"
+              className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+            >
+              Events
+            </NavLink>
+            <NavLink
+              to="/donate"
+              className="py-4 px-2 text-gray-500 font-semibold hover:text-black transition duration-300"
+            >
+              Donate
+            </NavLink>
+          </div>
+
+          <div className="md:hidden flex items-center">
             <button
-              class="outline-none mobile-menu-button"
+              className="outline-none mobile-menu-button"
               onClick={() => setToggle((prevState) => !prevState)}
             >
               <svg
-                class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                className="w-6 h-6 text-gray-500 hover:text-black"
                 x-show="!showMenu"
                 fill="none"
                 stroke-linecap="round"
@@ -80,42 +113,97 @@ export default function Navigation() {
         </div>
       </div>
 
-      <div class={`${!toggle && "hidden"} mobile-menu`}>
-        <ul class="">
-          <li class="active">
-            <a
-              href="index.html"
-              class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+      {/* Mobile screen navbar */}
+      <section
+        className={`${!toggle && "hidden"} mobile-menu md:hidden`}
+        id="menu"
+        onClick={() => hide()}
+      >
+        <ul>
+          <li>
+            <NavLink
+              to="/"
+              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
             >
               Home
-            </a>
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#services"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink
+              to="/about-us"
+              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
             >
-              Services
-            </a>
+              About Us
+            </NavLink>
+          </li>
+          <ul>
+            <li>
+              <NavLink
+                to="/about-us/atlanta"
+                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              >
+                Atlanta
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about-us/chicago"
+                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              >
+                Chicago
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about-us/la"
+                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              >
+                Log Angelese
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about-us/sanfrancisco"
+                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              >
+                San Francisco
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/about-us/dc"
+                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              >
+                Washington D.C.
+              </NavLink>
+            </li>
+          </ul>
+          <li>
+            <NavLink
+              to="/news"
+              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+            >
+              News
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#about"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink
+              to="/events"
+              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
             >
-              About
-            </a>
+              Events
+            </NavLink>
           </li>
           <li>
-            <a
-              href="#contact"
-              class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+            <NavLink
+              to="/donate"
+              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
             >
-              Contact Us
-            </a>
+              Donate
+            </NavLink>
           </li>
         </ul>
-      </div>
+      </section>
     </nav>
   );
 }
