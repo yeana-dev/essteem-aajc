@@ -1,56 +1,52 @@
-.slider{
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap");
 
+* {
+  font-family: "Open Sans", sans-serif;
 }
 
-.image{
-width: 1000px;
-height: 600px;
-border-radius: 10px;
-
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.right-arrow
-{
-position: absolute;
-top: 50%;
-right: 32px;
-font-size: 3rem;
-color: magenta;
-z-index: 100;
-cursor: pointer;
-user-select: none;
+.image {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
 }
 
-.left-arrow
-{
-position: absolute;
-top: 50%;
-left: 32px;
-font-size: 3rem;
-color: magenta;
-z-index: 100;
-cursor: pointer;
-user-select: none;
-
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: magenta;
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
 }
 
-.slide
-{
- opacity: 0;
- transition-duration: 1s ease;
-
-
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: magenta;
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
 }
 
-.slide.active
-{
- opacity: 1;
- transition-duration: 1s;
- transform: scale(1.08);
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
 
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
 }
