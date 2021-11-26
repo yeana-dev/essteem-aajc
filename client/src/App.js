@@ -1,7 +1,16 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import ImageSilder from "./components/Carousel/ImageSilder";
 import { SliderData } from "./components/Carousel/SilderData";
 import HomeIcons from "./components/HomeIcons";
+
+import Layout from "./layout/Layout";
+import Home from "./screens/Home/Home";
+import News from "./screens/News/News";
+import Events from "./screens/Events/Events";
+import Donate from "./screens/Donate/Donate";
+
 const homeIcons = [
   {
     location: "Washington D.C.",
@@ -52,14 +61,23 @@ Advancing Justice – LA is based in downtown Los Angeles, with satellite office
     link: "https://www.advancingjustice-atlanta.org/",
   },
 ];
+
 function App() {
   return (
     <div className="App">
-      <ImageSilder slides={SliderData} />
-      <header>
-        <h1>Title</h1>
-      </header>
-      <HomeIcons homeIcons={homeIcons} />
+      <Layout>
+        <ImageSilder slides={SliderData} />
+        <header>
+          <h1 className="border-2 border-dashed border-black">title</h1>
+        </header>
+        <HomeIcons homeIcons={homeIcons} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/donate" element={<Donate />} />
+        </Routes>
+      </Layout>
     </div>
   );
 }
