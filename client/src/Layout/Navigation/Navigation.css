@@ -1,8 +1,7 @@
-.wide-menu .active {
-  color: black;
+nav .active {
+  color: #f57b20;
 }
 
 .mobile-menu .active {
-  background-color: black;
-  color: white;
+  background-color: whitesmoke;
 }
