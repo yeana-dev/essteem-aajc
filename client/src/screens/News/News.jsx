@@ -11,16 +11,12 @@ export default function News(props) {
       title,
       slug,
       affiliate->{
-        name
+        name,
+        location
       },
+      press_release,
       publishedAt,
       body,
-      mainImage{
-        asset->{
-          _id,
-          url
-        },
-      },
       link
     }`
       )
@@ -29,8 +25,16 @@ export default function News(props) {
   }, []);
   console.log(news);
   return (
-    <div>
-      {news && news.map((each) => <NewsCard key={each._id} news={each} />)}
+    <div className="max-w-6xl mx-auto px-4 py-10">
+      <header>
+        <h1 className="font-bold text-2xl">News & Press Releases</h1>
+      </header>
+      <main>
+        <h2 className="uppercase text-xl">Latest</h2>
+        <div className="flex justify-between">
+          {news && news.map((each) => <NewsCard key={each._id} news={each} />)}
+        </div>
+      </main>
     </div>
   );
 }
