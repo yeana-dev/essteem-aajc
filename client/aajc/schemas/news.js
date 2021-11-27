@@ -31,14 +31,6 @@ export default {
       type: "boolean",
     },
     {
-      name: "mainImage",
-      title: "Main image",
-      type: "image",
-      options: {
-        hotspot: true,
-      },
-    },
-    {
       name: "publishedAt",
       title: "Published at",
       type: "date",
