@@ -12,13 +12,13 @@ export default function Navigation() {
   const hide = () => menu.classList.toggle("hidden");
 
   return (
-    <nav className="bg-white">
+    <nav className="bg-white" id="top">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex space-x-7 justify-between">
           <div>
-            <a href="#" className="flex items-center py-4 px-2">
+            <NavLink to="/" className="flex items-center py-4 px-2">
               <img src={logo} alt="" width="250" />
-            </a>
+            </NavLink>
           </div>
 
           <div className="hidden md:flex items-center space-x-4 wide-menu">
@@ -29,13 +29,16 @@ export default function Navigation() {
               Home
             </NavLink>
 
-            <div class="relative group">
-              <button class="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-orange transition duration-300">
-                <span>About Us</span>
-              </button>
-              <div class="absolute z-10 hidden bg-white group-hover:block">
-                <div class="px-2 pt-2 pb-4 bg-white shadow-lg rounded-lg w-52 ">
-                  <div class="grid grid-cols-1 ">
+            <div className="relative group">
+              <NavLink
+                to="about-us"
+                className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
+              >
+                About Us
+              </NavLink>
+              <div className="absolute z-10 hidden bg-white group-hover:block">
+                <div className="px-2 pt-2 pb-4 bg-white shadow-lg rounded-lg w-52 ">
+                  <div className="grid grid-cols-1 ">
                     <NavLink
                       to="/aboout-us/atlanta"
                       className="py-4 px-2 text-aajc-darkgrey hover:text-aajc-orange font-semibold transition duration-300"
@@ -73,7 +76,7 @@ export default function Navigation() {
 
             <NavLink
               to="/news"
-              className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-orange transition duration-300"
+              className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
             >
               News
             </NavLink>
