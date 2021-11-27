@@ -31,7 +31,7 @@ export default function News(props) {
       </header>
       <main>
         <h2 className="uppercase text-xl">Latest</h2>
-        <div className="flex justify-between">
+        <div className="flex justify-between flex-wrap gap-10">
           {news && news.map((each) => <NewsCard key={each._id} news={each} />)}
         </div>
       </main>
