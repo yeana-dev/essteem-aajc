@@ -16,7 +16,7 @@ export default function NewsCard({ news }) {
           <h1 className="pt-2 text-xl font-bold">{news.title}</h1>
         </header>
         <article>
-          <p className="text-xs py-2 font-semibold">{news.publishedAt}</p>
+          <p className="text-xs py-2 font-bold">{news.publishedAt}</p>
           <p className="text-sm">{news.body}</p>
         </article>
       </div>
