@@ -30,20 +30,31 @@ export default function EventCard({ event }) {
   }
 
   return (
-    <div className="flex items-start">
-      <div className="bg-aajc-yellowWhite p-2 text-center">
-        <p className="text-xs">{months[month - 1]}</p>
-        <p className="text-2xl font-bold">{newDate[1]}</p>
-      </div>
-      <section>
-        <h1>{event.title}</h1>
-        <h2>{event.time}</h2>
-        <p>Hosted by {event.affiliate.location} Affiliate</p>
-        <p>{event.description}</p>
+    <div className="flex items-start gap-5">
+      <section className="flex items-left w-20">
+        <div className="w-full bg-aajc-yellowWhite py-3 text-center rounded-md">
+          <p className="text-xs">{months[month - 1]}</p>
+          <p className="text-2xl font-bold">{newDate[1]}</p>
+        </div>
       </section>
-      <div>
-        <img src={urlFor(event.mainImage.asset.url).width(200).url()} />
-        <button type="button" onClick={() => openLink()}>
+      <section className="w-2/3 flex flex-col gap-1">
+        <h1 className="font-bold text-2xl">{event.title}</h1>
+        <h2 className="font-semibold">{event.time}</h2>
+        <p className="text-aajc-orange font-semibold text-sm">
+          Hosted by {event.affiliate.location} Affiliate
+        </p>
+        <p className="text-sm">{event.description}</p>
+      </section>
+      <div className="flex flex-col flex-grow gap-4">
+        <img
+          src={urlFor(event.mainImage.asset.url).width(200).height(120).url()}
+          className="rounded"
+        />
+        <button
+          type="button"
+          onClick={() => openLink()}
+          className="border-black border rounded py-2 uppercase text-xs font-semibold"
+        >
           View Event
         </button>
       </div>
