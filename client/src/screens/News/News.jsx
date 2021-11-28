@@ -42,7 +42,7 @@ export default function News() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-10">
+    <div className="max-w-6xl w-full mx-auto px-4 py-10">
       <header>
         <h1 className="font-bold text-3xl">News & Press Releases</h1>
       </header>
