@@ -24,6 +24,11 @@ export default {
       to: { type: "affiliate" },
     },
     {
+      name: "time",
+      title: "Time",
+      type: "string",
+    },
+    {
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -38,12 +43,15 @@ export default {
     //   of: [{ type: "reference", to: { type: "category" } }],
     // },
     {
-      name: "dateTime",
+      name: "date",
       title: "Event Data / Time",
-      type: "datetime",
+      type: "date",
+      options: {
+        dateFormat: "MMMM DD",
+      },
     },
     {
-      name: "Virtual",
+      name: "virtual",
       title: "This is a virtual event",
       type: "boolean",
       description:
