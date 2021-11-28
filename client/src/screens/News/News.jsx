@@ -1,10 +1,15 @@
+import "./News.css";
 import { useState, useEffect } from "react";
 import sanityClient from "../../Client";
+import ReactPaginate from "react-paginate";
 import NewsCard from "../../components/NewsCard/NewsCard";
+import SearchNews from "../../components/SearchNews/SearchNews";
 
-export default function News(props) {
-  let locations = [];
+export default function News() {
   const [news, setNews] = useState(null);
+  const [display, setDisplay] = useState([]);
+  const [pageNumber, setPageNumber] = useState(0);
+
   useEffect(() => {
     sanityClient
       .fetch(
@@ -21,44 +26,46 @@ export default function News(props) {
       link
     }`
       )
-      .then((data) => setNews(data))
+      .then((data) => {
+        setNews(data);
+        setDisplay(data);
+      })
       .catch(console.error);
   }, []);
 
-  if (news && news.length > 0) {
-    news.map((each) => {
-      if (!locations.includes(each.affiliate.location)) {
-        return locations.push(each.affiliate.location);
-      }
-    });
-  }
+  const newsPerPage = 6;
+  const pagesVisited = pageNumber * newsPerPage;
+  const pageCount = Math.ceil(display.length / newsPerPage);
+  const changePage = ({ selected }) => {
+    window.scrollTo(0, 0);
+    setPageNumber(selected);
+  };
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-10">
       <header>
         <h1 className="font-bold text-3xl">News & Press Releases</h1>
       </header>
-      <form>
-        <label for="search" />
-        <input
-          type="text"
-          name="search"
-          placeholder="Search for News & Press Releases"
-        />
-        <select>
-          <option value="" selected disabled hidden>
-            Location
-          </option>
-          {locations.map((location) => (
-            <option>{location}</option>
-          ))}
-        </select>
-      </form>
+      <SearchNews setDisplay={setDisplay} news={news} />
       <main>
-        <h2 className="uppercase text-lg font-semibold py-5">Latest</h2>
-        <div className="flex justify-between flex-wrap gap-10">
-          {news && news.map((each) => <NewsCard key={each._id} news={each} />)}
+        <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
+        <div className="flex flex-wrap gap-10">
+          {display &&
+            display
+              .slice(pagesVisited, pagesVisited + newsPerPage)
+              .map((news) => <NewsCard key={news._id} news={news} />)}
         </div>
+        <ReactPaginate
+          previousLabel={"<"}
+          nextLabel={">"}
+          pageCount={pageCount}
+          onPageChange={changePage}
+          containerClassName={"paginationBtns"}
+          previousLinkClassName={"previousBtn"}
+          nextLinkClassName={"nextBtn"}
+          disabledClassName={"paginationDisabled"}
+          activeClassName={"paginationActiveBtn"}
+        />
       </main>
     </div>
   );
