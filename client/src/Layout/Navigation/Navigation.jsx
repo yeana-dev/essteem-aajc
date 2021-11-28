@@ -12,7 +12,7 @@ export default function Navigation() {
   const hide = () => menu.classList.toggle("hidden");
 
   return (
-    <nav className="bg-white" id="top">
+    <nav className="bg-white uppercase" id="top">
       <div className="max-w-6xl mx-auto px-4">
         <div className="flex space-x-7 justify-between">
           <div>
@@ -21,7 +21,7 @@ export default function Navigation() {
             </NavLink>
           </div>
 
-          <div className="hidden md:flex items-center space-x-4 wide-menu">
+          <div className="hidden md:flex items-center space-x-4 wide-menu text-sm">
             <NavLink
               to="/"
               className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-black transition duration-300"
@@ -90,7 +90,7 @@ export default function Navigation() {
               to="/donate"
               className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
             >
-              Donate
+              Donations
             </NavLink>
           </div>
 
@@ -202,7 +202,7 @@ export default function Navigation() {
               to="/donate"
               className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
             >
-              Donate
+              Donations
             </NavLink>
           </li>
         </ul>
