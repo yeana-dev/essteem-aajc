@@ -24,6 +24,11 @@ export default {
       to: { type: "affiliate" },
     },
     {
+      name: "time",
+      title: "Time",
+      type: "string",
+    },
+    {
       name: "mainImage",
       title: "Main image",
       type: "image",
@@ -31,19 +36,16 @@ export default {
         hotspot: true,
       },
     },
-    // {
-    //   name: "categories",
-    //   title: "Categories",
-    //   type: "array",
-    //   of: [{ type: "reference", to: { type: "category" } }],
-    // },
     {
-      name: "dateTime",
-      title: "Event Data / Time",
-      type: "datetime",
+      name: "date",
+      title: "Event Date / Time",
+      type: "date",
+      options: {
+        dateFormat: "MMMM DD",
+      },
     },
     {
-      name: "Virtual",
+      name: "virtual",
       title: "This is a virtual event",
       type: "boolean",
       description:
@@ -67,11 +69,5 @@ export default {
       author: "affiliate.name",
       media: "mainImage",
     },
-    // prepare(selection) {
-    //   const { author } = selection;
-    //   return Object.assign({}, selection, {
-    //     subtitle: author && `by ${author}`,
-    //   });
-    // },
   },
 };

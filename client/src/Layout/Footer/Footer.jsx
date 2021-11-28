@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import logo from "../../assets/flame-logo.png";
 import twitterLogo from "../../assets/twitter.png";
 import instagramLogo from "../../assets/instagram.png";
@@ -22,11 +24,21 @@ export default function Footer() {
           <section className="flex flex-col gap-4">
             <header className="font-bold">Affiliates</header>
             <ul className="flex flex-col gap-4 text-sm font-normal">
-              <li>Atalanta</li>
-              <li>Chicago</li>
-              <li>Los Angeles</li>
-              <li>ALC - San Francisco</li>
-              <li>AAJC - Washington D.C.</li>
+              <li>
+                <Link to="/about-us/atlanta">Atalanta</Link>
+              </li>
+              <li>
+                <Link to="/about-us/chicago">Chicago</Link>
+              </li>
+              <li>
+                <Link to="/about-us/los-angeles">Los Angeles</Link>
+              </li>
+              <li>
+                <Link to="/about-us/san-francisco">ALC - San Francisco</Link>
+              </li>
+              <li>
+                <Link to="/about-us/washington-dc">AAJC - Washington D.C.</Link>
+              </li>
             </ul>
           </section>
           <section className="flex flex-col gap-4">
