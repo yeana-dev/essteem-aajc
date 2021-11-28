@@ -100,10 +100,22 @@ export default function SearchNews(props) {
         <option value="pressRelease">Press Releases</option>
       </select>
       <button
-        className="uppercase text-sm bg-aajc-darkgrey text-white px-9 py-2 border border-aajc-darkgrey border-solid"
+        className="uppercase text-xs bg-aajc-darkgrey text-white px-9 py-2 border border-aajc-darkgrey border-solid"
         type="submit"
       >
         Search
+      </button>
+      <button
+        className="uppercase text-xs px-4 py-2 border border-aajc-darkgrey border-solid"
+        onClick={() =>
+          setSearch({
+            search: "",
+            location: "",
+            pressRelease: null,
+          })
+        }
+      >
+        Reset
       </button>
     </form>
   );
