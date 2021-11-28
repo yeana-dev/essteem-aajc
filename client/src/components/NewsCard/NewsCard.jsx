@@ -13,7 +13,7 @@ export default function NewsCard({ news }) {
               {news.press_release ? "Press Release" : "News"}
             </button>
           </div>
-          <h1 className="pt-2 text-xl font-bold">{news.title}</h1>
+          <h1 className="pt-2 text-lg font-bold">{news.title}</h1>
         </header>
         <article>
           <p className="text-xs py-2 font-bold">{news.publishedAt}</p>
