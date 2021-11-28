@@ -1,7 +1,6 @@
 import "./News.css";
 import { useState, useEffect } from "react";
-import sanityClient from "../../Client";
-import ReactPaginate from "react-paginate";
+import sanityClient from "../../client";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import SearchNews from "../../components/SearchNews/SearchNews";
 
