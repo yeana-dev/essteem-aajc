@@ -54,7 +54,7 @@ export default function News() {
               .slice(pagesVisited, pagesVisited + newsPerPage)
               .map((news) => <NewsCard key={news._id} news={news} />)}
         </div>
-        <ReactPaginate
+        {/* <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
           pageCount={pageCount}
@@ -64,7 +64,7 @@ export default function News() {
           nextLinkClassName={"nextBtn"}
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActiveBtn"}
-        />
+        /> */}
       </main>
     </div>
   );

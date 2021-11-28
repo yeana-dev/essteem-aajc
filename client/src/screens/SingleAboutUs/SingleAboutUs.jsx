@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import sanityClient from "../../Client";
+import sanityClient from "../../client";
 import { useLocation } from "react-router-dom";
 
 export default function SingleAboutUs() {

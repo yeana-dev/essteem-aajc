@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-import "./NewsCard.css";
-=======
 import { Link } from "react-router-dom";
 
 import sanityClient from "../../client";
@@ -11,7 +8,6 @@ const builder = imageUrlBuilder(sanityClient);
 function urlFor(src) {
   return builder.image(src);
 }
->>>>>>> f891177 (boxes are now in a grid and the text is underneath)
 
 export default function NewsCard({ news }) {
   return (

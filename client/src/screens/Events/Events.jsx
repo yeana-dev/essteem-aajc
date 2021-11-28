@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import sanityClient from "../../Client";
+import sanityClient from "../../client";
 import ReactPaginate from "react-paginate";
 import SearchEvent from "../../components/SearchEvent/SearchEvent";
 import EventCard from "../../components/EventCard/EventCard";
