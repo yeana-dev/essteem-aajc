@@ -36,15 +36,9 @@ export default {
         hotspot: true,
       },
     },
-    // {
-    //   name: "categories",
-    //   title: "Categories",
-    //   type: "array",
-    //   of: [{ type: "reference", to: { type: "category" } }],
-    // },
     {
       name: "date",
-      title: "Event Data / Time",
+      title: "Event Date / Time",
       type: "date",
       options: {
         dateFormat: "MMMM DD",
@@ -75,11 +69,5 @@ export default {
       author: "affiliate.name",
       media: "mainImage",
     },
-    // prepare(selection) {
-    //   const { author } = selection;
-    //   return Object.assign({}, selection, {
-    //     subtitle: author && `by ${author}`,
-    //   });
-    // },
   },
 };
