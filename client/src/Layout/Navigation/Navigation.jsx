@@ -40,31 +40,31 @@ export default function Navigation() {
                 <div className="px-2 pt-2 pb-4 bg-white shadow-lg rounded-lg w-52 ">
                   <div className="grid grid-cols-1 ">
                     <NavLink
-                      to="/aboout-us/atlanta"
+                      to="/about-us/atlanta"
                       className="py-4 px-2 text-aajc-darkgrey hover:text-aajc-orange font-semibold transition duration-300"
                     >
                       Atlanta
                     </NavLink>
                     <NavLink
-                      to="/aboout-us/chicago"
+                      to="/about-us/chicago"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       Chicago
                     </NavLink>
                     <NavLink
-                      to="/aboout-us/la"
+                      to="/about-us/la"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       Los Angeles
                     </NavLink>
                     <NavLink
-                      to="/aboout-us/sanfrancisco"
+                      to="/about-us/sanfrancisco"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       San Francisco
                     </NavLink>
                     <NavLink
-                      to="/aboout-us/dc"
+                      to="/about-us/dc"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       Washington D.C.
