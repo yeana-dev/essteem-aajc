@@ -1,10 +1,5 @@
 import "./App.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { Routes, Route } from "react-router-dom";
-
-import ImageSilder from "./components/Carousel/ImageSilder";
-import { SliderData } from "./components/Carousel/SilderData";
-import HomeIcons from "./components/HomeIcons";
 
 import Layout from "./Layout/Layout";
 import Home from "./screens/Home/Home";
@@ -71,11 +66,6 @@ function App() {
     <div className="App">
       <ScrollToTop>
         <Layout>
-          {/* <ImageSilder slides={SliderData} />
-        <header>
-          <h1 className="border-2 border-dashed border-black">title</h1>
-        </header>
-        <HomeIcons homeIcons={homeIcons} /> */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about-us" element={<AboutUs />} />
