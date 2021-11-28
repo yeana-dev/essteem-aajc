@@ -2,7 +2,7 @@ import "./NewsCard.css";
 
 export default function NewsCard({ news }) {
   return (
-    <a href={news.link} target="_blank">
+    <a href={news.link} target="_blank" rel="noreferrer">
       <div className="news-card">
         <header className="bg-aajc-yellowWhite rounded-lg p-3">
           <div>
