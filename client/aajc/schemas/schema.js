@@ -10,6 +10,7 @@ import news from "./news";
 import affiliate from "./affiliate";
 import event from "./event";
 import donation from "./donation";
+import carousel from "./carousel";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -24,6 +25,7 @@ export default createSchema({
     news,
     event,
     donation,
+    carousel,
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     blockContent,
