@@ -48,7 +48,7 @@ export default function Event() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto px-10 py-5">
+    <div className="max-w-6xl w-full mx-auto px-10 py-5">
       <h1 className="font-bold text-2xl ">Attend an Event</h1>
       <SearchEvent events={events} setDisplay={setDisplay} />
       <div className="w-full flex flex-col gap-10">
