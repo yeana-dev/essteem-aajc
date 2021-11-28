@@ -52,19 +52,19 @@ export default function Navigation() {
                       Chicago
                     </NavLink>
                     <NavLink
-                      to="/about-us/la"
+                      to="/about-us/los-angeles"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       Los Angeles
                     </NavLink>
                     <NavLink
-                      to="/about-us/sanfrancisco"
+                      to="/about-us/san-francisco"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       San Francisco
                     </NavLink>
                     <NavLink
-                      to="/about-us/dc"
+                      to="/about-us/washington-dc"
                       className="py-4 px-2 text-aajc-darkgrey font-semibold hover:text-aajc-orange transition duration-300"
                     >
                       Washington D.C.
@@ -158,7 +158,7 @@ export default function Navigation() {
             </li>
             <li>
               <NavLink
-                to="/about-us/la"
+                to="/about-us/los-angeles"
                 className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
               >
                 Log Angelese
@@ -166,7 +166,7 @@ export default function Navigation() {
             </li>
             <li>
               <NavLink
-                to="/about-us/sanfrancisco"
+                to="/about-us/san-francisco"
                 className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
               >
                 San Francisco
@@ -174,7 +174,7 @@ export default function Navigation() {
             </li>
             <li>
               <NavLink
-                to="/about-us/dc"
+                to="/about-us/washington-dc"
                 className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
               >
                 Washington D.C.
