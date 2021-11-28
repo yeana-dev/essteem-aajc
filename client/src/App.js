@@ -5,7 +5,7 @@ import ImageSilder from "./components/Carousel/ImageSilder";
 import { SliderData } from "./components/Carousel/SilderData";
 import HomeIcons from "./components/HomeIcons";
 
-import Layout from "./layout/Layout";
+import Layout from "./Layout/Layout";
 import Home from "./screens/Home/Home";
 import AboutUs from "./screens/AboutUs/AboutUs";
 import SingleAboutUs from "./screens/SingleAboutUs/SingleAboutUs";
