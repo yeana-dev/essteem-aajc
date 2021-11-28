@@ -23,6 +23,11 @@ export default {
       },
     },
     {
+      name: "location",
+      title: "Location",
+      type: "string",
+    },
+    {
       name: "image",
       title: "Image",
       type: "image",
