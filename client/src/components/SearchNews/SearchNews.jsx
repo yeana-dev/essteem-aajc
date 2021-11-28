@@ -12,8 +12,9 @@ export default function SearchNews(props) {
   if (props.news && props.news.length > 0) {
     props.news.map((each) => {
       if (!locations.includes(each.affiliate.location)) {
-        return locations.push(each.affiliate.location);
+        locations.push(each.affiliate.location);
       }
+      return locations;
     });
   }
 
