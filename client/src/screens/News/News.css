@@ -1,0 +1,22 @@
+.paginationBtns {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+}
+
+.paginationBtns a {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+  padding: 5px 10px;
+  font-size: 12px;
+}
+
+.paginationBtns .previousBtn {
+  border-left: 1px solid black;
+}
+
+.paginationActiveBtn a {
+  background-color: #f8b96f;
+  font-weight: bold;
+}
