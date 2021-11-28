@@ -10,7 +10,9 @@ export default function News(props) {
         `*[_type == "news"]{
       title,
       slug,
-      affiliate,
+      affiliate->{
+        name
+      },
       publishedAt,
       body,
       mainImage{

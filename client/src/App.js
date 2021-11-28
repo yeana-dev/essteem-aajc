@@ -1,7 +1,16 @@
 import "./App.css";
+import { Routes, Route } from "react-router-dom";
+
 import ImageSilder from "./components/Carousel/ImageSilder";
 import { SliderData } from "./components/Carousel/SilderData";
 import HomeIcons from "./components/HomeIcons";
+
+import Layout from "./layout/Layout";
+import Home from "./screens/Home/Home";
+import News from "./screens/News/News";
+import Events from "./screens/Events/Events";
+import Donate from "./screens/Donate/Donate";
+
 const homeIcons = [
   {
     location: "Washington D.C.",
@@ -52,67 +61,27 @@ Advancing Justice – LA is based in downtown Los Angeles, with satellite office
     link: "https://www.advancingjustice-atlanta.org/",
   },
 ];
+
 function App() {
   return (
-		<div className='App'>
-			<ImageSilder slides={SliderData} />
-			<header>
-				<h3>Our Mission</h3>
-				<h2>
-					To promote a fair and equitable society for all by working for civil
-					and human rights that empower Asian Americans and Pacific Islanders
-					and other underserved communities
-				</h2>
-			</header>
-			<HomeIcons homeIcons={homeIcons} />
-			<div className='HomeStats'>
-				<div className='stat1'>
-					<h1>$543,750 </h1>
-					<h3>
-						saved in citizenship fees for low-income immigrants, through
-						successful fee waivers
-					</h3>
-				</div>
 
-				<div className='stat2'></div>
-				<h1>7,596 </h1>
-				<h3>
-					calls resolved through 8 Asian Language Legal Intake Project helplines
-					in 12 languages/dialects
-				</h3>
+    <div className="App">
+      <Layout>
+        <ImageSilder slides={SliderData} />
+        <header>
+          <h1 className="border-2 border-dashed border-black">title</h1>
+        </header>
+        <HomeIcons homeIcons={homeIcons} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/news" element={<News />} />
+          <Route path="/events" element={<Events />} />
+          <Route path="/donate" element={<Donate />} />
+        </Routes>
+      </Layout>
+    </div>
+  );
 
-				<div className='stat3'></div>
-				<h1>14,910 </h1>
-				<h3>
-					individuals enrolled in state and local health coverage and safety net
-					programs{' '}
-				</h3>
-			</div>
-			<button className='learnMore'>LEARN MORE</button>
-			<div className = "elderlyOldMan">
-				<h3>Elderly Korean Man Targeted by Hate </h3>
-				<h5 className='date'>September 29, 2021</h5>
-				<h5 className='source'>Source: Stand against Hatred</h5>
-				<p>
-					Elderly Korean man was driving in his van near the corner of E.
-					Washington and S. Central Ave in Los Angeles. A woman approached the
-					van and started beating on the windows, yelling at him to go back to
-					Asia and other negative comments about Asians. She yanked the
-					windshield wiper of the car until it broke and damaged the car. The
-					elder waited until she moved back to drive away and avoid further
-					damage to the car. He was not sure how to deal with the situation with
-					his limited English speaking skills.
-				</p>
-        <button>View More</button>
-			</div>
-      <div>
-
-        </div>
-
-
-
-		</div>
-	);
 }
 
 export default App;
