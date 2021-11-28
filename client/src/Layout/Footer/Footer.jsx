@@ -3,7 +3,6 @@ import twitterLogo from "../../assets/twitter.png";
 import instagramLogo from "../../assets/instagram.png";
 import facebookLogo from "../../assets/facebook.png";
 import githubLogo from "../../assets/github.png";
-
 import HelpDonate from "../../components/HelpDonate/HelpDonate";
 
 export default function Footer() {
@@ -42,7 +41,7 @@ export default function Footer() {
             </ul>
           </section>
           <section className="flex flex-col gap-4">
-            <header>Follow Us</header>
+            <header className="font-bold">Follow Us</header>
             <ul className="flex gap-7">
               <li>
                 <a href="https://twitter.com/Adv_Justice">
