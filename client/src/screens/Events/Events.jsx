@@ -51,14 +51,14 @@ export default function Event() {
     <div className="max-w-6xl mx-auto px-10 py-5">
       <h1 className="font-bold text-2xl ">Attend an Event</h1>
       <SearchEvent events={events} setDisplay={setDisplay} />
-      <div>
-        <h2 className="uppercase font-semibold text-lg mb-10">Upcoming</h2>
+      <div className="w-full flex flex-col gap-10">
+        <h2 className="uppercase font-semibold text-lg">Upcoming</h2>
         {display &&
           display
-            // .slice(pagesVisited, pagesVisited + newsPerPage)
+            .slice(pagesVisited, pagesVisited + newsPerPage)
             .map((event) => <EventCard event={event} />)}
       </div>
-      {/* <ReactPaginate
+      <ReactPaginate
         previousLabel={"<"}
         nextLabel={">"}
         pageCount={pageCount}
@@ -68,7 +68,7 @@ export default function Event() {
         nextLinkClassName={"nextBtn"}
         disabledClassName={"paginationDisabled"}
         activeClassName={"paginationActiveBtn"}
-      /> */}
+      />
     </div>
   );
 }
