@@ -1,4 +1,4 @@
-export const SliderData = [
+export default [
 	{
 		image:
 			'https://images.unsplash.com/photo-1637625302137-0b3533b2d33b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8NTYwfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60',
