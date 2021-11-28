@@ -66,6 +66,7 @@ Advancing Justice – LA is based in downtown Los Angeles, with satellite office
 
 function App() {
   return (
+
     <div className="App">
       <Layout>
         <ImageSilder slides={SliderData} />
@@ -88,6 +89,7 @@ function App() {
       </Layout>
     </div>
   );
+
 }
 
 export default App;
