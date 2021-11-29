@@ -61,7 +61,7 @@ export default function SearchEvent(props) {
         value={search.search}
         autoComplete="off"
         placeholder="Search for Events"
-        className="p-3 border border-solid border-aajc-darkgrey flex-shrink w-2/3 text-sm"
+        className="p-3 border border-solid border-dark flex-shrink w-2/3 text-sm"
         onChange={(event) => handleChange(event)}
       />
       <label for="location" />
@@ -69,7 +69,7 @@ export default function SearchEvent(props) {
         name="location"
         id="location"
         value={search.location}
-        className="p-3 border-t border-r border-b border-solid border-aajc-darkgrey text-sm w-1/6"
+        className="p-3 border-t border-r border-b border-solid border-dark text-sm w-1/6"
         onChange={(event) => handleChange(event)}
       >
         <option
@@ -89,7 +89,7 @@ export default function SearchEvent(props) {
       <select
         id="type"
         name="virtual"
-        className="p-3 border-t border-r border-b border-solid border-aajc-darkgrey text-sm w-1/6"
+        className="p-3 border-t border-r border-b border-solid border-dark text-sm w-1/6"
         onChange={(event) => handleChange(event)}
       >
         <option value="" selected disabled hidden>
@@ -99,13 +99,13 @@ export default function SearchEvent(props) {
         <option value="virtual">Virtual</option>
       </select>
       <button
-        className="uppercase text-xs bg-aajc-darkgrey text-white px-9 py-2 border border-aajc-darkgrey border-solid"
+        className="uppercase text-xs bg-dark text-white px-9 py-2 border border-dark border-solid"
         type="submit"
       >
         Search
       </button>
       <button
-        className="uppercase text-xs px-4 py-2 border border-aajc-darkgrey border-solid"
+        className="uppercase text-xs px-4 py-2 border border-dark border-solid"
         onClick={() =>
           setSearch({
             search: "",
