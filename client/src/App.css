@@ -1,0 +1,350 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&family=Zen+Kurenaido&display=swap');
+
+.App {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image {
+  width: 1000px;
+  height: 600px;
+  border-radius: 10px;
+}
+
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: magenta;
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
+}
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: magenta;
+  z-index: 100;
+  cursor: pointer;
+  user-select: none;
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+}
+
+.slide.active {
+  opacity: 1;
+  transition-duration: 1s;
+  transform: scale(1.08);
+}
+
+.HomeStats .stat{
+  display: flex;
+  
+width: 330px;
+height: 58px;
+left: 126px;
+top: 780px;
+
+/* AJ Text/H1 48pt Bold */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height, or 120% */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #F47B20;
+}
+
+
+
+/* .affliationWideCampaigns
+{
+
+	display:flex;
+	 justify-content: space-between;
+	 align-items: baseline;
+
+} */
+
+
+.affliationWideCampaigns {
+ 
+
+/*   height: 300px;
+  width: 300px; */
+  margin: 80px;
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  align-items:flex-start;
+
+}
+.item {
+ 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.one {
+display: flex;
+flex-direction: column;
+
+}
+.two {
+
+  grid-column: 2 / span 1;
+  display: flex;
+flex-direction: column;
+
+}
+.three {grid-row: 2 / span 1;
+	display: flex;
+flex-direction: column;
+}
+.four {
+ 
+  grid-row: 2 / span 1;
+  display: flex;
+flex-direction: column;
+}
+
+
+
+
+
+
+
+.affliationWideCampaignsH
+{
+
+	margin: 80px;
+display:flex; 
+justify-content: center; 
+font-family: 'Open Sans', sans-serif;
+font-size: 36px;
+
+}
+
+.imageCol
+{
+
+  display: flex;
+width: 100%;
+
+
+
+}
+
+.message
+{
+
+  display: flex;
+height: 30%;
+position: static;
+width: 570px;
+height: 101px;
+left: 0px;
+top: 339px;
+
+/* AJ Text/B1 18pt Regular */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 25px;
+/* or 140% */
+
+letter-spacing: 0.0025em;
+
+/* AJ Grayscale/dark gray 151515 */
+
+color: #151515;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+margin: 24px 0px;
+
+
+
+}
+
+
+.refs
+{
+/* Auto Layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px;
+
+position: static;
+width: 570px;
+height: 23px;
+left: 0px;
+top: 443.02px;
+
+
+/* Inside Auto Layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
+margin: 24px 0px;
+
+/* AJ Text/S2 16pt SEMIBOLD */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 22px;
+/* identical to box height, or 140% */
+
+text-align: center;
+letter-spacing: 0.0125em;
+text-decoration-line: underline;
+text-transform: uppercase;
+
+/* AJ Grayscale/dark gray 151515 */
+
+color: #151515;
+
+	
+}
+
+.elderlyOldMan{
+  position: relative;
+  text-align: center;
+  color: white;
+	
+
+}
+
+.elderlyOldManImg
+{
+display: flex;
+width: 100%;
+
+
+}
+
+.coverStory {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+
+
+
+/* or 140% */
+
+letter-spacing: -0.005em;
+
+color: #FFFFFF;
+
+
+}
+
+.coverStory .text
+{
+
+/* identical to box height, or 168% */
+
+color: #FFFFFF;
+
+/* or 140% */
+
+letter-spacing: -0.005em;
+
+color: #FFFFFF;
+
+
+}
+
+.missiontitle
+{
+
+
+  margin: 40px; 
+	display: flex;
+
+/* AJ Text/H6 24pt SemiBold */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 24px;
+line-height: 34px;
+/* identical to box height, or 140% */
+
+text-align: center;
+
+color: #000000;
+
+
+
+}
+
+.mission
+{
+
+
+  margin: 40px; 
+display: flex;
+/* AJ Text/H4 30pt SemiBold */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: 600;
+font-size: 30px;
+line-height: 42px;
+/* or 140% */
+
+text-align: center;
+
+/* AJ Grayscale/dark gray 151515 */
+
+color: #151515;
+
+}
+
+.m
+{
+
+display:flex; 
+justify-content: center; 
+align-items: center;
+
+flex-direction: column;
+
+
+}

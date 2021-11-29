@@ -1,4 +1,4 @@
-import sanityClient from "../../Client";
+import sanityClient from "../../client";
 import imageUrlBuilder from "@sanity/image-url";
 
 export default function EventCard({ event }) {
