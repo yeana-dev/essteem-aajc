@@ -1,5 +1,5 @@
 import donateHeader from "../../assets/donateheader.png";
-import sanityClient from "../../Client";
+import sanityClient from "../../client";
 import { useState, useEffect } from "react";
 
 export default function Donate() {
