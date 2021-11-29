@@ -54,7 +54,10 @@ export default function SearchNews(props) {
   }
 
   return (
-    <form className="flex w-full my-10" onSubmit={(e) => handleSubmit(e)}>
+    <form
+      className="flex w-full my-10 flex-col sm:flex-row"
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <label for="search" />
       <input
         type="text"
@@ -63,7 +66,7 @@ export default function SearchNews(props) {
         value={search.search}
         autoComplete="off"
         placeholder="Search for News & Press Releases"
-        className="p-3 border border-solid border-dark flex-shrink w-2/3 text-sm"
+        className="p-3 sm:border border-t border-l border-r border-solid border-dark flex-shrink sm:w-2/3 text-sm"
         onChange={(event) => handleChange(event)}
       />
       <label for="location" />
@@ -71,7 +74,7 @@ export default function SearchNews(props) {
         name="location"
         id="location"
         value={search.location}
-        className="p-3 border-t border-r border-b border-solid border-dark text-sm w-1/6"
+        className="p-3 border sm:border-t sm:border-r sm:border-b border-solid border-dark text-sm sm:w-1/6"
         onChange={(event) => handleChange(event)}
       >
         <option
@@ -91,7 +94,7 @@ export default function SearchNews(props) {
       <select
         id="type"
         name="pressRelease"
-        className="p-3 border-t border-r border-b border-solid border-dark text-sm w-1/6"
+        className="p-3 border-r border-l sm:border-t sm:border-r sm:border-b border-solid border-dark text-sm sm:w-1/6"
         onChange={(event) => handleChange(event)}
       >
         <option value="" selected disabled hidden>

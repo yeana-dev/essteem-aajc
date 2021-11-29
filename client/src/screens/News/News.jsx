@@ -49,7 +49,7 @@ export default function News() {
       <SearchNews setDisplay={setDisplay} news={news} />
       <main>
         <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-10 justify-center">
           {display &&
             display
               .slice(pagesVisited, pagesVisited + newsPerPage)
