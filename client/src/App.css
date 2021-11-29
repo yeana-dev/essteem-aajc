@@ -54,8 +54,27 @@ App {
   transform: scale(1.08);
 }
 
-.HomeStats {
+.HomeStats .stat{
   display: flex;
+  
+width: 330px;
+height: 58px;
+left: 126px;
+top: 780px;
+
+/* AJ Text/H1 48pt Bold */
+
+font-family: Open Sans;
+font-style: normal;
+font-weight: bold;
+font-size: 48px;
+line-height: 58px;
+/* identical to box height, or 120% */
+
+text-align: center;
+letter-spacing: -0.015em;
+
+color: #F47B20;
 }
 
 
@@ -72,10 +91,10 @@ App {
 
 .affliationWideCampaigns {
  
-  padding: 40px;
+
 /*   height: 300px;
   width: 300px; */
-  margin: auto;
+  margin: 80px;
   display: grid;
 
   grid-template-columns: 1fr 1fr;
@@ -121,6 +140,7 @@ flex-direction: column;
 .affliationWideCampaignsH
 {
 
+	margin: 80px;
 display:flex; 
 justify-content: center; 
 font-family: 'Open Sans', sans-serif;
@@ -242,6 +262,7 @@ width: 100%;
   position: absolute;
   top: 8px;
   right: 16px;
+
 
 
 /* or 140% */

@@ -98,7 +98,7 @@ function App() {
 			</header>
 			{/* <HomeIcons homeIcons={homeIcons} /> */}
 			<div className='HomeStats'>
-				<div className='stat1'>
+				<div className='stat'>
 					<h1>$543,750 </h1>
 					<h3>
 						saved in citizenship fees for low-income immigrants, through
@@ -106,14 +106,14 @@ function App() {
 					</h3>
 				</div>
 
-				<div className='stat2'></div>
+				<div className='stat'></div>
 				<h1>7,596 </h1>
 				<h3>
 					calls resolved through 8 Asian Language Legal Intake Project helplines
 					in 12 languages/dialects
 				</h3>
 
-				<div className='stat3'></div>
+				<div className='stat'></div>
 				<h1>14,910 </h1>
 				<h3>
 					individuals enrolled in state and local health coverage and safety net
