@@ -5,6 +5,13 @@ import ImageSilder from "./components/Carousel/ImageSilder";
 import { SliderData } from "./components/Carousel/SilderData";
 import HomeIcons from "./components/HomeIcons";
 
+// import image1 from "../src/assets/image1.jpeg"
+// import StandAgainstHatred from '../src/assets/StandAgainstHatred.png';
+// import hollaback from '../src/assets/hollaback 1.png'
+// import vote from '../src/assets/unsplash_ZqsY740eAOo.png';
+// import supportFamilies from '../src/assets/VOFlogo-colored 1.png';
+
+
 import Layout from "./Layout/Layout";
 import Home from "./screens/Home/Home";
 import AboutUs from "./screens/AboutUs/AboutUs";

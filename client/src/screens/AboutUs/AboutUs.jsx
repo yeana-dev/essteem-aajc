@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import sanityClient from "../../Client";
+import sanityClient from "../../client";
 import "./AboutUs.css";
 
 export default function AboutUs(props) {
