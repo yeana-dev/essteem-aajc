@@ -88,9 +88,9 @@ function App() {
 			</Layout>
 
 			{/* <ImageSilder slides={SliderData} /> */}
-			<header>
-				<h3>Our Mission</h3>
-				<h2>
+			<header className = 'm'>
+				<h3 className="missiontitle">Our Mission</h3>
+				<h2 className = "mission">
 					To promote a fair and equitable society for all by working for civil
 					and human rights that empower Asian Americans and Pacific Islanders
 					and other underserved communities
@@ -122,11 +122,13 @@ function App() {
 			</div>
 			<button className='learnMore'>LEARN MORE</button>
 			<div className='elderlyOldMan'>
-				<img src={image1} alt='' />
-				<h3>Elderly Korean Man Targeted by Hate </h3>
+				<img className = "elderlyOldManImg" src={image1} alt='' />
+
+        <div className= "coverStory">
+				<h3 className= "title">Elderly Korean Man Targeted by Hate </h3>
 				<h5 className='date'>September 29, 2021</h5>
 				<h5 className='source'>Source: Stand against Hatred</h5>
-				<p>
+				<p className="text">
 					Elderly Korean man was driving in his van near the corner of E.
 					Washington and S. Central Ave in Los Angeles. A woman approached the
 					van and started beating on the windows, yelling at him to go back to
@@ -137,6 +139,7 @@ function App() {
 					his limited English speaking skills.
 				</p>
 				<button>View More</button>
+        </div>
 			</div>
 
            <h1 className='affliationWideCampaignsH'>Affiliation-Wide Campaigns</h1>
@@ -150,8 +153,8 @@ function App() {
 						StandAgainstHatred.org. We document hate crimes, harassment, and
 						discrimination experienced by our community.
 					</p>
-
-					<a href='url'>standagainsthatred.org</a>
+          <div className = "refs"><a href='https://www.standagainsthatred.org/'>standagainsthatred.org</a></div>
+					
 				</div>
 
 				<div className='item two'>
@@ -161,8 +164,17 @@ function App() {
 						anti-Asian hate. Register for free training with any of our
 						affiliates below.
 					</p>
+              <div className = "refs">
+                    <a href='url'>Atlanta</a>
+                    <a href='url'>Chicago</a>
+                    <a href='url'>Los Angeles</a>
+                    <a href='url'>ALC (San Francisco)</a>
+                    <a href='url'>AAJC (Washington D.C.)</a>
 
-					<a href='url'>standagainsthatred.org</a>
+
+              </div>
+			
+          
 				</div>
 
 				<div className='item three'>
@@ -173,7 +185,8 @@ function App() {
 						empathy, and justice.
 					</p>
 
-					<a href='url'>standagainsthatred.org</a>
+<div className = "refs"><a href='https://www.valueourfamilies.org/'>valueourfamilies.org</a></div>
+					
 				</div>
 				<div className='item four'>
 					<img className ='imageCol'src={vote} alt='' />
@@ -183,7 +196,16 @@ function App() {
 						members about the voting process.
 					</p>
 
-					<a href='url'>standagainsthatred.org</a>
+    <div className = "refs">
+                    <a href='url'>Atlanta</a>
+                    <a href='url'>Chicago</a>
+                    <a href='url'>Los Angeles</a>
+                    <a href='url'>ALC (San Francisco)</a>
+                    <a href='url'>AAJC (Washington D.C.)</a>
+
+
+              </div>
+					
 				</div>
 			</div>
 		</div>
