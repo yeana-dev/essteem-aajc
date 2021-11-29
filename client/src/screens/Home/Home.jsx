@@ -1,217 +1,265 @@
-import "../../../src/App.css";
-import { Routes, Route } from "react-router-dom";
+import "./Home.css";
+import sanityClient from "../../client";
+import { useState, useEffect } from "react";
+import HomeEvent from "../../components/HomeEvent/HomeEvent";
+import HomeSlider from "../../components/HomeSlider/HomeSlider";
 
-import ImageSilder from "../../components/Carousel/ImageSilder";
-import { SliderData } from "../../components/Carousel/SilderData";
-// import HomeIcons from "../../components/HomeIcons";
+import StandAgainstHatred from "../../assets/StandAgainstHatred.png";
+import hollaback from "../../assets/bystander.png";
+import supportFamilies from "../../assets/valueOurFamilies.png";
+import votingRight from "../../assets/votingright.png";
 
-import image1 from "../Home/image1.jpeg"
-import StandAgainstHatred from '../Home/StandAgainstHatred.png';
-import hollaback from '../Home/hollaback 1.png'
-import vote from '../Home/unsplash_ZqsY740eAOo.png';
-import supportFamilies from '../Home/VOFlogo-colored 1.png';
+export default function Home() {
+  const [slides, setSlides] = useState(null);
+  useEffect(() => {
+    sanityClient
+      .fetch(
+        `*[_type == "carousel"]{
+      heading,
+      subHeading,
+      link,
+      image{
+        asset->{
+          _id,
+          url
+        },
+      },
+    }`
+      )
+      .then((data) => setSlides(data))
+      .catch(console.error);
+  }, []);
 
-import Layout from "../../Layout/Layout";
-import News from "../../screens/News/News";
-import Events from "../../screens/Events/Events";
-import Donate from "../../screens/Donate/Donate";
-
-// const homeIcons = [
-//   {
-//     location: "Washington D.C.",
-//     name: "Asian Americans Advancing Justice |AAJC",
-//     image:
-//       "https://www.advancingjustice-aajc.org/themes/sunset/img/aajc_logo.svg",
-//     statement:
-//       "Fighting for civil rights and empowering Asian Americans to create a more just America for all.",
-//     link: "https://www.advancingjustice-aajc.org/",
-//   },
-//   {
-//     location: "San Francisco",
-//     name: "Asian Americans Advancing Justice |Asian Law Caucus",
-//     image:
-//       "https://www.advancingjustice-alc.org/wp-content/uploads/2016/04/logo.png",
-//     statement: `
-// The mission of Asian Americans Advancing Justice – Asian Law Caucus is to promote, advance, and represent the legal and civil rights of Asian Pacific Islander communities.`,
-//     link: "https://www.advancingjustice-alc.org/",
-//   },
-//   {
-//     location: "Chicago",
-//     name: "Asian Americans Advancing Justice | Chicago",
-//     image:
-//       "https://www.advancingjustice-chicago.org/wp-content/themes/advancingjustice/library/images/Logo.svg",
-//     statement:
-//       "Asian Americans Advancing Justice | Chicago builds power through collective advocacy and organizing to achieve racial equity.",
-//     link: "https://www.advancingjustice-chicago.org/",
-//   },
-//   {
-//     location: "Los Angeles",
-//     name: "Asian Americans Advancing Justice | Los Angeles",
-//     image:
-//       "https://i0.wp.com/advancingjustice-la.org/wp-content/uploads/2021/08/Advancing-Justice-LA-Transparent-Logo.png?w=630&ssl=1",
-//     statement: `Asian Americans Advancing Justice – Los Angeles (Advancing Justice – LA) is the nation’s largest legal and civil rights organization for Asian Americans, Native Hawaiians, and Pacific Islanders (AANHPI).
-
-// Founded in 1983 as the Asian Pacific American Legal Center, Advancing Justice – LA serves more than 15,000 individuals and organizations every year. Through direct services, impact litigation, policy advocacy, leadership development, and capacity building, Advancing Justice – LA focuses on the most vulnerable members of Asian American and AANHPI communities while also building a strong voice for civil rights and social justice.
-
-// Advancing Justice – LA is based in downtown Los Angeles, with satellite offices in Orange County and Sacramento.`,
-//     link: "https://advancingjustice-la.org/",
-//   },
-//   {
-//     location: "Atlanta",
-//     name: "Asian Americans Advancing Justice | Atlanta",
-//     image:
-//       "https://images.squarespace-cdn.com/content/v1/5f0cc12a064e9716d52e6052/1602519259968-YXZ0JYDYMQ3YW57RS5MR/AJ_ATL_logo_white.png?format=1500w",
-//     statement:
-//       "Protecting the civil and human rights of Asian Americans in Georgia and the Southeast.",
-//     link: "https://www.advancingjustice-atlanta.org/",
-//   },
-// ];
-
-function App() {
   return (
-		<div className='App'>
-			<Layout>
-				{/* <ImageSilder slides={SliderData} /> */}
-				<header>
-					<h1 className='border-2 border-dashed border-black'>title</h1>
-				</header>
-				{/* <HomeIcons homeIcons={homeIcons} /> */}
-				<Routes>
+    <div>
+      {slides && <HomeSlider slides={slides} />}
+      <div className="home max-w-6xl mx-auto px-4">
+        <header className="text-center flex flex-col gap-5 my-5">
+          <h3 className="text-lg font-semibold">Our Mission</h3>
+          <h2 className="text-xl w-2/3 mx-auto">
+            To promote a fair and equitable society for all by working for civil
+            and human rights that empower Asian Americans and Pacific Islanders
+            and other underserved communities
+          </h2>
+        </header>
 
-					<Route path='/news' element={<News />} />
-					<Route path='/events' element={<Events />} />
-					<Route path='/donate' element={<Donate />} />
-				</Routes>
-			</Layout>
+        <div className="flex gap-3 my-5">
+          <div className="flex flex-col gap-4">
+            <h1 className="text-center text-aajc-orange font-bold text-3xl">
+              $543,750
+            </h1>
+            <h3 className="text-center text-sm">
+              saved in citizenship fees for low-income immigrants, through
+              successful fee waivers
+            </h3>
+          </div>
 
-			{/* <ImageSilder slides={SliderData} /> */}
-			<header className = 'm'>
-				<h3 className="missiontitle">Our Mission</h3>
-				<h2 className = "mission">
-					To promote a fair and equitable society for all by working for civil
-					and human rights that empower Asian Americans and Pacific Islanders
-					and other underserved communities
-				</h2>
-			</header>
-			{/* <HomeIcons homeIcons={homeIcons} /> */}
-			<div className='HomeStats'>
-				<div className='stat'>
-					<h1>$543,750 </h1>
-					<h3>
-						saved in citizenship fees for low-income immigrants, through
-						successful fee waivers
-					</h3>
-				</div>
+          <div className="flex flex-col gap-4">
+            <h1 className="text-center text-aajc-orange font-bold text-3xl">
+              7,596
+            </h1>
+            <h3 className="text-center text-sm">
+              calls resolved through 8 Asian Language Legal Intake Project
+              helplines in 12 languages/dialects
+            </h3>
+          </div>
 
-				<div className='stat'></div>
-				<h1>7,596 </h1>
-				<h3>
-					calls resolved through 8 Asian Language Legal Intake Project helplines
-					in 12 languages/dialects
-				</h3>
-
-				<div className='stat'></div>
-				<h1>14,910 </h1>
-				<h3>
-					individuals enrolled in state and local health coverage and safety net
-					programs{' '}
-				</h3>
-			</div>
-			<button className='learnMore'>LEARN MORE</button>
-			<div className='elderlyOldMan'>
-				<img className = "elderlyOldManImg" src={image1} alt='' />
-
-        <div className= "coverStory">
-				<h3 className= "title">Elderly Korean Man Targeted by Hate </h3>
-				<h5 className='date'>September 29, 2021</h5>
-				<h5 className='source'>Source: Stand against Hatred</h5>
-				<p className="text">
-					Elderly Korean man was driving in his van near the corner of E.
-					Washington and S. Central Ave in Los Angeles. A woman approached the
-					van and started beating on the windows, yelling at him to go back to
-					Asia and other negative comments about Asians. She yanked the
-					windshield wiper of the car until it broke and damaged the car. The
-					elder waited until she moved back to drive away and avoid further
-					damage to the car. He was not sure how to deal with the situation with
-					his limited English speaking skills.
-				</p>
-				<button>View More</button>
+          <div className="flex flex-col gap-4">
+            <h1 className="text-center text-aajc-orange font-bold text-3xl">
+              14,910
+            </h1>
+            <h3 className="text-center text-sm">
+              individuals enrolled in state and local health coverage and safety
+              net programs
+            </h3>
+          </div>
         </div>
-			</div>
 
-           <h1 className='affliationWideCampaignsH'>Affiliation-Wide Campaigns</h1>
-			<div className='affliationWideCampaigns'>
-   
-				<div className='item one'>
-					<img className ='imageCol' src={StandAgainstHatred} alt='' />
-					<p className='message'>
-						We encourage community members who have experienced anti-Asian hate
-						to share their experiences and report to our website
-						StandAgainstHatred.org. We document hate crimes, harassment, and
-						discrimination experienced by our community.
-					</p>
-          <div className = "refs"><a href='https://www.standagainsthatred.org/'>standagainsthatred.org</a></div>
-					
-				</div>
+        <div className="flex justify-center my-5">
+          <button className="border border-dark px-5 py-1 text-sm font-bold rounded-md">
+            LEARN MORE
+          </button>
+        </div>
 
-				<div className='item two'>
-					<img className ='imageCol' src={hollaback} alt='' />
-					<p className='message'>
-						We believe every person can safely take action against incidents of
-						anti-Asian hate. Register for free training with any of our
-						affiliates below.
-					</p>
-              <div className = "refs">
-                    <a href='url'>Atlanta</a>
-                    <a href='url'>Chicago</a>
-                    <a href='url'>Los Angeles</a>
-                    <a href='url'>ALC (San Francisco)</a>
-                    <a href='url'>AAJC (Washington D.C.)</a>
+        <div className="coverStory flex p-10 justify-between">
+          <div className="emptyContainer w-1/2"></div>
+          <div className="w-1/3 text-white flex flex-col gap-3">
+            <h3 className="titlefont-bold text-xl">
+              Elderly Korean Man Targeted by Hate
+            </h3>
+            <h5 className="date">September 29, 2021</h5>
+            <h5 className="source text-xs">Source: Stand against Hatred</h5>
+            <p className="text-sm">
+              Elderly Korean man was driving in his van near the corner of E.
+              Washington and S. Central Ave in Los Angeles. A woman approached
+              the van and started beating on the windows, yelling at him to go
+              back to Asia and other negative comments about Asians. She yanked
+              the windshield wiper of the car until it broke and damaged the
+              car. The elder waited until she moved back to drive away and avoid
+              further damage to the car. He was not sure how to deal with the
+              situation with his limited English speaking skills.
+            </p>
+            <a
+              href="https://www.standagainsthatred.org/stories"
+              target="_blank"
+              className="underline text-sm"
+            >
+              View More
+            </a>
+          </div>
+        </div>
+        <div className="affiliation-wide">
+          <h1 className="text-2xl font-bold text-center">
+            Affiliation-Wide Campaigns
+          </h1>
+          <div className="affliationWideCampaigns flex flex-wrap gap-12 justify-evenly">
+            <div className="item w-5/12 flex flex-col gap-3">
+              <img className="imageCol" src={StandAgainstHatred} alt="" />
+              <p className="text-sm">
+                We encourage community members who have experienced anti-Asian
+                hate to share their experiences and report to our website
+                StandAgainstHatred.org. We document hate crimes, harassment, and
+                discrimination experienced by our community.
+              </p>
+              <a
+                href="https://www.standagainsthatred.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="underline text-sm uppercase text-center"
+              >
+                standagainsthatred.org
+              </a>
+            </div>
 
+            <div className="item w-5/12 flex flex-col gap-3">
+              <img className="imageCol" src={hollaback} alt="" />
+              <p className="text-sm">
+                We believe every person can safely take action against incidents
+                of anti-Asian hate. Register for free training with any of our
+                affiliates below.
+              </p>
+              <ul className="refs flex flex-wrap gap-3 justify-center underline uppercase text-sm">
+                <li>
+                  <a href="url" target="_blank" rel="noreferrer">
+                    Atlanta
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.advancingjustice-chicago.org/what-we-do/bystander-intervention-trainings/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Chicago
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://advancingjustice-la.org/bystander-intervention-trainings/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Los Angeles
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.advancingjustice-alc.org/stop-anti-asian-hate/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    ALC (San Francisco)
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://advancingjustice-aajc.org/anti-asian-hate"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    AAJC (Washington D.C.)
+                  </a>
+                </li>
+              </ul>
+            </div>
 
+            <div className="item w-5/12 flex flex-col gap-3">
+              <img className="imageCol" src={supportFamilies} alt="" />
+              <p className="text-sm">
+                We exist to protect, preserve, and strengthen the family
+                immigration system and promote an immigration system that is
+                informed by love, empathy, and justice.
+              </p>
+              <a
+                href="https://www.valueourfamilies.org/"
+                className="underline text-sm uppercase text-center"
+              >
+                valueourfamilies.org
+              </a>
+            </div>
+
+            <div className="item w-5/12 flex flex-col gap-3">
+              <img className="imageCol" src={votingRight} alt="" />
+              <p className="text-sm">
+                The Voting Rights Project has created several tools for
+                community-based organizations to use to educate their community
+                members about the voting process.
+              </p>
+
+              <div className="refs">
+                <ul className="refs flex flex-wrap gap-3 justify-center underline uppercase text-sm">
+                  <li>
+                    <a
+                      href="https://www.advancingjustice-atlanta.org/voting-elections"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Atlanta
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.advancingjustice-chicago.org/what-we-do/civic-engagement/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Chicago
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://advancingjustice-la.org/advocacy/laws-and-issues-essential-to-well-being/voting-rights/voting-rights-tools-and-resources/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Los Angeles
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.advancingjustice-alc.org/programs/voting-rights/"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      ALC (San Francisco)
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="https://www.advancingjustice-aajc.org/know-your-rights"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      AAJC (Washington D.C.)
+                    </a>
+                  </li>
+                </ul>
               </div>
-			
-          
-				</div>
-
-				<div className='item three'>
-					<img className ='imageCol' src={supportFamilies} alt='' />
-					<p className='message'>
-						We exist to protect, preserve, and strengthen the family immigration
-						system and promote an immigration system that is informed by love,
-						empathy, and justice.
-					</p>
-
-<div className = "refs"><a href='https://www.valueourfamilies.org/'>valueourfamilies.org</a></div>
-					
-				</div>
-				<div className='item four'>
-					<img className ='imageCol'src={vote} alt='' />
-					<p className='message'>
-						The Voting Rights Project has created several tools for
-						community-based organizations to use to educate their community
-						members about the voting process.
-					</p>
-
-    <div className = "refs">
-                    <a href='url'>Atlanta</a>
-                    <a href='url'>Chicago</a>
-                    <a href='url'>Los Angeles</a>
-                    <a href='url'>ALC (San Francisco)</a>
-                    <a href='url'>AAJC (Washington D.C.)</a>
-
-
-              </div>
-					
-				</div>
-			</div>
-		</div>
-	);
+            </div>
+          </div>
+        </div>
+        <HomeEvent />
+      </div>
+    </div>
+  );
 }
-
-export default App;
-
-
-// export default function Home() {
-//   return <div>I am home</div>;
-// }
