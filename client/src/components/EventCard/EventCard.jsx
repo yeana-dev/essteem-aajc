@@ -6,7 +6,7 @@ export default function EventCard({ event }) {
   function urlFor(source) {
     return builder.image(source);
   }
-  console.log(event);
+
   const months = [
     "January",
     "February",

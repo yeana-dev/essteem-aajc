@@ -55,6 +55,7 @@ export default function AboutUs(props) {
               <div className="flex flex-col gap-2 items-center px-3 w-52 my-2 justify-start mx-auto">
                 <img
                   src={urlFor(affiliate.image.asset.url).width(300).url()}
+                  alt=""
                   className="object-cover"
                 />
                 <p className="text-sm font-semibold text-center">

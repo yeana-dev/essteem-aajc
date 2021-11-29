@@ -2,7 +2,6 @@ import Carousel from "react-bootstrap/Carousel";
 import "./HomeSlider.css";
 
 export default function HomeSlider({ slides }) {
-  console.log(slides);
   return (
     <Carousel className="w-full mx-auto">
       {slides.map((slide) => (

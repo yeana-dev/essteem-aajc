@@ -19,7 +19,6 @@ export default function Donate() {
       })
       .catch(console.error);
   }, []);
-  console.log(donations);
 
   function openLink(link) {
     window.open(link);
