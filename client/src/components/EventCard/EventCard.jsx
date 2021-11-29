@@ -30,7 +30,7 @@ export default function EventCard({ event }) {
   }
 
   return (
-    <div className="flex items-start gap-5">
+    <div className="flex items-start gap-4">
       <section className="flex items-left w-20">
         <div className="w-full bg-aajc-yellowWhite py-3 text-center rounded-md">
           <p className="text-xs">{months[month - 1]}</p>
@@ -45,7 +45,7 @@ export default function EventCard({ event }) {
         </p>
         <p className="text-sm">{event.description}</p>
       </section>
-      <div className="flex flex-col flex-grow gap-4">
+      <div className="flex flex-col flex-grow gap-2">
         <img
           src={urlFor(event.mainImage.asset.url).width(200).height(120).url()}
           className="rounded"
@@ -53,7 +53,7 @@ export default function EventCard({ event }) {
         <button
           type="button"
           onClick={() => openLink()}
-          className="border-black border rounded py-2 uppercase text-xs font-semibold"
+          className="border border-dark rounded py-2 uppercase text-xs font-semibold"
         >
           View Event
         </button>

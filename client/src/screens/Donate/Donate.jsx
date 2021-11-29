@@ -37,10 +37,10 @@ export default function Donate() {
         </p>
       </header>
       <img src={donateHeader} alt="" className="my-10 rounded" />
-      <div className="flex flex-col gap-5">
+      <div className="flex flex-col gap-4">
         {donations &&
           donations.map((donation) => (
-            <div className="bg-aajc-yellowWhite rounded-md px-5 py-5 flex justify-between items-center">
+            <div className="bg-aajc-yellowWhite rounded-md px-5 py-3 flex justify-between items-center">
               <h1 className="font-semibold text-lg">
                 {donation.affiliate.name}
               </h1>
