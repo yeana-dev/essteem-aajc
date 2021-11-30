@@ -43,7 +43,7 @@ export default function Home() {
           </h2>
         </header>
 
-        <div className="flex gap-3 my-5">
+        <div className="flex gap-3 my-5 flex-col sm:flex-row">
           <div className="flex flex-col gap-4">
             <h1 className="text-center text-aajc-orange font-bold text-3xl">
               $543,750
@@ -81,9 +81,9 @@ export default function Home() {
           </button>
         </div>
 
-        <div className="coverStory flex p-10 justify-between">
-          <div className="emptyContainer w-1/2"></div>
-          <div className="w-1/3 text-white flex flex-col gap-3">
+        <div className="coverStory flex p-10 lg:justify-between">
+          <div className="emptyContainer lg:w-1/2"></div>
+          <div className="lg:w-1/3 text-white flex flex-col gap-3">
             <h3 className="titlefont-bold text-xl">
               Elderly Korean Man Targeted by Hate
             </h3>
@@ -102,6 +102,7 @@ export default function Home() {
             <a
               href="https://www.standagainsthatred.org/stories"
               target="_blank"
+              rel="noreferrer"
               className="underline text-sm"
             >
               View More
@@ -112,8 +113,8 @@ export default function Home() {
           <h1 className="text-2xl font-bold text-center">
             Affiliation-Wide Campaigns
           </h1>
-          <div className="affliationWideCampaigns flex flex-wrap gap-12 justify-evenly">
-            <div className="item w-5/12 flex flex-col gap-3">
+          <div className="affliationWideCampaigns flex flex-col sm:flex-row flex-wrap gap-12 justify-evenly">
+            <div className="item sm:w-5/12 flex flex-col gap-3">
               <img className="imageCol" src={StandAgainstHatred} alt="" />
               <p className="text-sm">
                 We encourage community members who have experienced anti-Asian
@@ -131,7 +132,7 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="item w-5/12 flex flex-col gap-3">
+            <div className="item sm:w-5/12 flex flex-col gap-3">
               <img className="imageCol" src={hollaback} alt="" />
               <p className="text-sm">
                 We believe every person can safely take action against incidents
@@ -140,7 +141,11 @@ export default function Home() {
               </p>
               <ul className="refs flex flex-wrap gap-3 justify-center underline uppercase text-sm">
                 <li>
-                  <a href="url" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.ihollaback.org/bystanderintervention/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Atlanta
                   </a>
                 </li>
@@ -183,7 +188,7 @@ export default function Home() {
               </ul>
             </div>
 
-            <div className="item w-5/12 flex flex-col gap-3">
+            <div className="item sm:w-5/12 flex flex-col gap-3">
               <img className="imageCol" src={supportFamilies} alt="" />
               <p className="text-sm">
                 We exist to protect, preserve, and strengthen the family
@@ -192,13 +197,15 @@ export default function Home() {
               </p>
               <a
                 href="https://www.valueourfamilies.org/"
+                target="_blank"
+                rel="noreferrer"
                 className="underline text-sm uppercase text-center"
               >
                 valueourfamilies.org
               </a>
             </div>
 
-            <div className="item w-5/12 flex flex-col gap-3">
+            <div className="item sm:w-5/12 flex flex-col gap-3">
               <img className="imageCol" src={votingRight} alt="" />
               <p className="text-sm">
                 The Voting Rights Project has created several tools for
