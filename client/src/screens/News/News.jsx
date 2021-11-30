@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import sanityClient from "../../client";
 import NewsCard from "../../components/NewsCard/NewsCard";
 import SearchNews from "../../components/SearchNews/SearchNews";
+import ReactPaginate from "react-paginate";
 
 export default function News() {
   const [news, setNews] = useState(null);
@@ -48,13 +49,13 @@ export default function News() {
       <SearchNews setDisplay={setDisplay} news={news} />
       <main>
         <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
-        <div className="flex flex-wrap gap-10">
+        <div className="flex flex-wrap gap-4 justify-center">
           {display &&
             display
               .slice(pagesVisited, pagesVisited + newsPerPage)
               .map((news) => <NewsCard key={news._id} news={news} />)}
         </div>
-        {/* <ReactPaginate
+        <ReactPaginate
           previousLabel={"<"}
           nextLabel={">"}
           pageCount={pageCount}
@@ -64,7 +65,7 @@ export default function News() {
           nextLinkClassName={"nextBtn"}
           disabledClassName={"paginationDisabled"}
           activeClassName={"paginationActiveBtn"}
-        /> */}
+        />
       </main>
     </div>
   );

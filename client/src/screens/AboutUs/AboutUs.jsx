@@ -1,11 +1,15 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import sanityClient from "../../client";
+import imageUrlBuilder from "@sanity/image-url";
 import "./AboutUs.css";
 
 export default function AboutUs(props) {
   const [affiliates, setAffiliates] = useState(null);
-
+  const builder = imageUrlBuilder(sanityClient);
+  function urlFor(source) {
+    return builder.image(source);
+  }
   useEffect(() => {
     sanityClient
       .fetch(
@@ -30,8 +34,8 @@ export default function AboutUs(props) {
   return (
     <div>
       <div className="max-w-6xl mx-auto px-4">
-        <header className="flex flex-col gap-7">
-          <h2 className="text-aajc-orange font-bold text-3xl text-center">
+        <header className="flex flex-col gap-7 text-center">
+          <h2 className="text-aajc-orange font-bold text-3xl ">
             Together, we fight anti-Asian hate and discrimination.
           </h2>
           <p>
@@ -45,11 +49,15 @@ export default function AboutUs(props) {
             Americans and Pacific Islanders and other underserved communities.
           </p>
         </header>
-        <div className="flex py-10">
+        <div className="flex py-10 flex-wrap">
           {affiliates &&
             affiliates.map((affiliate) => (
-              <div className="flex flex-col gap-2 items-center px-3">
-                <img src={affiliate.image.asset.url} />
+              <div className="flex flex-col gap-2 items-center px-3 w-52 my-2 justify-start mx-auto">
+                <img
+                  src={urlFor(affiliate.image.asset.url).width(300).url()}
+                  alt=""
+                  className="object-cover"
+                />
                 <p className="text-sm font-semibold text-center">
                   {affiliate.name}
                 </p>

@@ -32,10 +32,10 @@ export default function SingleAboutUs() {
 
   return (
     <div className="bg-aajc-lightorange">
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto lg:px-4">
         {affiliate && (
-          <div className="flex justify-between gap-10 items-center">
-            <section className="flex flex-col justify-center items-center gap-10">
+          <div className="flex justify-between gap-10 items-center flex-col-reverse sm:flex-row">
+            <section className="flex flex-col justify-center items-center gap-10 py-5">
               <h1 className="text-2xl font-bold">{affiliate.name}</h1>
               <p className="leading-loose">{affiliate.bio}</p>
               <p className="text-sm font-semibold">
@@ -46,7 +46,11 @@ export default function SingleAboutUs() {
                 .
               </p>
             </section>
-            <img src={affiliate.image.asset.url} width="650" alt="" />
+            <img
+              src={affiliate.image.asset.url}
+              alt=""
+              className="object-cover sm:w-1/2"
+            />
           </div>
         )}
       </div>

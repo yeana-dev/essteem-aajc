@@ -1,18 +1,9 @@
-import { Link } from "react-router-dom";
-
-import sanityClient from "../../client";
-import imageUrlBuilder from "@sanity/image-url";
-
-const builder = imageUrlBuilder(sanityClient);
-
-function urlFor(src) {
-  return builder.image(src);
-}
+import "./NewsCard.css";
 
 export default function NewsCard({ news }) {
   return (
-    <a href={news.link} target="_blank" rel="noreferrer">
-      <div className="news-card">
+    <div className="news-card">
+      <a href={news.link} target="_blank" rel="noreferrer">
         <header className="bg-aajc-yellowWhite rounded-lg p-3">
           <div>
             <button className="uppercase bg-aajc-darkgrey text-white text-xs font-bold px-2 py-1 rounded-lg mr-2">
@@ -28,7 +19,7 @@ export default function NewsCard({ news }) {
           <p className="text-xs py-2 font-bold">{news.publishedAt}</p>
           <p className="text-sm">{news.body}</p>
         </article>
-      </div>
-    </a>
+      </a>
+    </div>
   );
 }
