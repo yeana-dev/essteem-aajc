@@ -49,6 +49,7 @@ export default function EventCard({ event }) {
         <img
           src={urlFor(event.mainImage.asset.url).width(200).height(120).url()}
           className="rounded"
+          alt=""
         />
         <button
           type="button"
