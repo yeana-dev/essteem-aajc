@@ -3,7 +3,7 @@ import "./HomeSlider.css";
 
 export default function HomeSlider({ slides }) {
   return (
-    <Carousel className="w-full mx-auto">
+    <Carousel className="carousel w-full mx-auto object-none">
       {slides.map((slide) => (
         <Carousel.Item>
           <a href={slide.link}>
@@ -13,8 +13,8 @@ export default function HomeSlider({ slides }) {
               alt=""
             />
           </a>
-          <Carousel.Caption className="flex flex-col justify-center gap-5">
-            <h1 className="text-3xl font-bold mb-2">{slide.heading}</h1>
+          <Carousel.Caption className="flex flex-col justify-center gap-2 md:gap-5">
+            <h1 className="md:text-3xl font-bold md:mb-2">{slide.heading}</h1>
             <h2>{slide.subHeading}</h2>
           </Carousel.Caption>
         </Carousel.Item>

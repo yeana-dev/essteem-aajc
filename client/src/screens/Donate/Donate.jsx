@@ -39,7 +39,7 @@ export default function Donate() {
       <div className="flex flex-col gap-4">
         {donations &&
           donations.map((donation) => (
-            <div className="bg-aajc-yellowWhite rounded-md px-5 py-3 flex justify-between items-center">
+            <div className="bg-aajc-yellowWhite rounded-md px-5 py-3 flex sm:flex-row flex-col gap-3 text-center sm:text-left justify-between items-center">
               <h1 className="font-semibold text-lg">
                 {donation.affiliate.name}
               </h1>
