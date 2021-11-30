@@ -1,13 +1,4 @@
-import { Link } from "react-router-dom";
 import "./NewsCard.css";
-import sanityClient from "../../client";
-import imageUrlBuilder from "@sanity/image-url";
-
-const builder = imageUrlBuilder(sanityClient);
-
-function urlFor(src) {
-  return builder.image(src);
-}
 
 export default function NewsCard({ news }) {
   return (
