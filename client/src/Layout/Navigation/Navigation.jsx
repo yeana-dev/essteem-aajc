@@ -118,7 +118,9 @@ export default function Navigation() {
 
       {/* Mobile screen navbar */}
       <section
-        className={`${!toggle && "hidden"} mobile-menu md:hidden`}
+        className={`${
+          !toggle && "hidden"
+        } mobile-menu md:hidden px-3 border-t-8 border-aajc-orange`}
         id="menu"
         onClick={() => hide()}
       >
@@ -126,7 +128,7 @@ export default function Navigation() {
           <li>
             <NavLink
               to="/"
-              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              className="block text-sm px-2 py-3 text-black hover:bg-black hover:text-white transition duration-300"
             >
               Home
             </NavLink>
@@ -134,7 +136,7 @@ export default function Navigation() {
           <li>
             <NavLink
               to="/about-us"
-              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              className="block text-sm px-2 py-3 transition duration-300"
             >
               About Us
             </NavLink>
@@ -143,7 +145,7 @@ export default function Navigation() {
             <li>
               <NavLink
                 to="/about-us/atlanta"
-                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+                className="block text-sm px-2 py-3 transition duration-300"
               >
                 Atlanta
               </NavLink>
@@ -151,7 +153,7 @@ export default function Navigation() {
             <li>
               <NavLink
                 to="/about-us/chicago"
-                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+                className="block text-sm px-2 py-3 transition duration-300"
               >
                 Chicago
               </NavLink>
@@ -159,15 +161,15 @@ export default function Navigation() {
             <li>
               <NavLink
                 to="/about-us/los-angeles"
-                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+                className="block text-sm px-2 py-3 transition duration-300"
               >
-                Log Angelese
+                Los Angeles
               </NavLink>
             </li>
             <li>
               <NavLink
                 to="/about-us/san-francisco"
-                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+                className="block text-sm px-2 py-3 transition duration-300"
               >
                 San Francisco
               </NavLink>
@@ -175,7 +177,7 @@ export default function Navigation() {
             <li>
               <NavLink
                 to="/about-us/washington-dc"
-                className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+                className="block text-sm px-2 py-3 transition duration-300"
               >
                 Washington D.C.
               </NavLink>
@@ -184,7 +186,7 @@ export default function Navigation() {
           <li>
             <NavLink
               to="/news"
-              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              className="block text-sm px-2 py-3 transition duration-300"
             >
               News
             </NavLink>
@@ -192,7 +194,7 @@ export default function Navigation() {
           <li>
             <NavLink
               to="/events"
-              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              className="block text-sm px-2 py-3 transition duration-300"
             >
               Events
             </NavLink>
@@ -200,7 +202,7 @@ export default function Navigation() {
           <li>
             <NavLink
               to="/donate"
-              className="block text-sm px-2 py-4 text-black hover:bg-black hover:text-white transition duration-300"
+              className="block text-sm px-2 py-3 transition duration-300"
             >
               Donations
             </NavLink>
