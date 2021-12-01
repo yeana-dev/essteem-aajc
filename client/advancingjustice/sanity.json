@@ -1,7 +1,7 @@
 {
   "root": true,
   "project": {
-    "name": "aajc"
+    "name": "advancingjustice"
   },
   "api": {
     "projectId": "dvd4y0u2",
@@ -15,9 +15,7 @@
   ],
   "env": {
     "development": {
-      "plugins": [
-        "@sanity/vision"
-      ]
+      "plugins": ["@sanity/vision"]
     }
   },
   "parts": [

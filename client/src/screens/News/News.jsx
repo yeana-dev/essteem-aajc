@@ -50,10 +50,13 @@ export default function News() {
       <main>
         <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
         <div className="flex flex-wrap gap-4 justify-center">
-          {display &&
+          {display && display.length > 0 ? (
             display
               .slice(pagesVisited, pagesVisited + newsPerPage)
-              .map((news) => <NewsCard key={news._id} news={news} />)}
+              .map((item) => <NewsCard key={item._id} news={item} />)
+          ) : (
+            <h1>Loading</h1>
+          )}
         </div>
         <ReactPaginate
           previousLabel={"<"}

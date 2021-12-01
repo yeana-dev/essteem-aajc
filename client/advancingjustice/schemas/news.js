@@ -7,8 +7,6 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
-      validation: (Rule) =>
-        Rule.required().max(90).error("Maximum 90 characters"),
     },
     {
       name: "slug",
@@ -34,9 +32,6 @@ export default {
       name: "publishedAt",
       title: "Published at",
       type: "date",
-      option: {
-        dateFormat: "MMMM D, YYYY",
-      },
     },
     {
       name: "link",
@@ -56,13 +51,6 @@ export default {
     select: {
       title: "title",
       author: "affiliate.name",
-      media: "mainImage",
     },
-    // prepare(selection) {
-    //   const { author } = selection;
-    //   return Object.assign({}, selection, {
-    //     subtitle: author && `by ${author}`,
-    //   });
-    // },
   },
 };
