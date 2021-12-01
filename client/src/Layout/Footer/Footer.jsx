@@ -25,7 +25,7 @@ export default function Footer() {
             <header className="font-bold sm:text-left">Affiliates</header>
             <ul className="flex flex-col gap-4 text-sm font-normal sm:text-left">
               <li>
-                <Link to="/about-us/atlanta">Atalanta</Link>
+                <Link to="/about-us/atlanta">Atlanta</Link>
               </li>
               <li>
                 <Link to="/about-us/chicago">Chicago</Link>
