@@ -76,6 +76,7 @@ We’re hoping this new website can better serve as a portal that 1) explains th
 ### Built With
 
 - [React.js](https://reactjs.org/)
+- [TailwindCSS](https://tailwindcss.com)
 - [Sanity.io](https://sanity.io/)
 
 <p align="right"><a href="#top">back to top</a></p>
@@ -134,7 +135,6 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [ ] Build react architecture
 
 <p align="right"><a href="#top">back to top</a></p>
-
 
 <!-- CONTRIBUTING -->
 
