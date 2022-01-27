@@ -16,10 +16,7 @@ export default function News() {
         `*[_type == "news"]{
       title,
       slug,
-      affiliate->{
-        name,
-        location
-      },
+      affiliate[]->{name,location},
       press_release,
       publishedAt,
       body,
