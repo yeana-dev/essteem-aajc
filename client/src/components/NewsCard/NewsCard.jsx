@@ -6,9 +6,11 @@ export default function NewsCard({ news }) {
       <a href={news.link} target="_blank" rel="noreferrer">
         <header className="bg-aajc-yellowWhite rounded-lg p-3">
           <div>
-            <button className="uppercase bg-aajc-darkgrey text-white text-xs font-bold px-2 py-1 rounded-lg mr-2">
-              {news.affiliate.location}
-            </button>
+            {news.affiliate.map((eachAffiliate) => (
+              <button className="uppercase bg-aajc-darkgrey text-white text-xs font-bold px-2 py-1 rounded-lg mr-2">
+                {eachAffiliate.location}
+              </button>
+            ))}
             <button className="uppercase bg-aajc-lightorange text-aajc-darkgrey text-xs font-bold px-2 py-1 rounded-lg">
               {news.press_release ? "Press Release" : "News"}
             </button>
