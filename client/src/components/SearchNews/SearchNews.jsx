@@ -10,11 +10,13 @@ export default function SearchNews(props) {
   let locations = [];
 
   if (props.news && props.news.length > 0) {
-    props.news.map((each) => {
-      if (!locations.includes(each.affiliate.location)) {
-        locations.push(each.affiliate.location);
-      }
-      return locations;
+    props.news.map((eachNews) => {
+      eachNews.affiliate.map((eachAffiliate) => {
+        if (!locations.includes(eachAffiliate.location)) {
+          locations.push(eachAffiliate.location);
+        }
+        return locations;
+      });
     });
   }
 
