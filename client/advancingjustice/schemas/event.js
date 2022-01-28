@@ -20,12 +20,13 @@ export default {
     {
       name: "affiliate",
       title: "Affiliate",
-      type: "reference",
-      to: { type: "affiliate" },
+      type: "array",
+      of: [{ type: "reference", to: { type: "affiliate" } }],
     },
     {
       name: "time",
       title: "Time",
+      description: "0:00 PM - 0:00 PM Format",
       type: "string",
     },
     {
@@ -40,9 +41,6 @@ export default {
       name: "date",
       title: "Event Date / Time",
       type: "date",
-      options: {
-        dateFormat: "MMMM DD",
-      },
     },
     {
       name: "virtual",
