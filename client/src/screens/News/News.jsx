@@ -43,7 +43,11 @@ export default function News() {
       <header>
         <h1 className="font-bold text-3xl">News & Press Releases</h1>
       </header>
-      <SearchNews setDisplay={setDisplay} news={news} />
+      <SearchNews
+        setDisplay={setDisplay}
+        news={news}
+        setPageNumber={setPageNumber}
+      />
       <main>
         <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
         <div className="flex flex-wrap gap-4 justify-center">
@@ -52,7 +56,7 @@ export default function News() {
               .slice(pagesVisited, pagesVisited + newsPerPage)
               .map((item) => <NewsCard key={item._id} news={item} />)
           ) : (
-            <h1>Loading</h1>
+            <h1>No news to be displayed</h1>
           )}
         </div>
         <ReactPaginate
