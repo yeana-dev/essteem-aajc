@@ -29,6 +29,14 @@ export default function EventCard({ event }) {
     window.open(event.link);
   }
 
+  function affiliateLocations() {
+    let affiliates = [];
+    event.affiliate.forEach((affiliate) => {
+      affiliates.push(affiliate.location);
+    });
+    return affiliates.join(", ");
+  }
+
   return (
     <div className="flex items-start gap-4">
       <section className="flex items-left w-20">
@@ -41,7 +49,8 @@ export default function EventCard({ event }) {
         <h1 className="font-bold text-2xl">{event.title}</h1>
         <h2 className="font-semibold">{event.time}</h2>
         <p className="text-aajc-orange font-semibold text-sm">
-          Hosted by {event.affiliate.location} Affiliate
+          Hosted by {affiliateLocations()}{" "}
+          {event.affiliate.length === 1 ? "Affiliate" : "Affiliates"}
         </p>
         <p className="text-sm">{event.description}</p>
       </section>

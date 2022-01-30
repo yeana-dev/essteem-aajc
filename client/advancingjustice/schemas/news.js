@@ -20,8 +20,8 @@ export default {
     {
       name: "affiliate",
       title: "Affiliate",
-      type: "reference",
-      to: { type: "affiliate" },
+      type: "array",
+      of: [{ type: "reference", to: { type: "affiliate" } }],
     },
     {
       name: "press_release",

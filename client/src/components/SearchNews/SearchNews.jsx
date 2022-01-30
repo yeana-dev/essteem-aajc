@@ -7,14 +7,16 @@ export default function SearchNews(props) {
     pressRelease: null,
   });
 
-  let locations = [];
+  let locations = ["All"];
 
   if (props.news && props.news.length > 0) {
-    props.news.map((each) => {
-      if (!locations.includes(each.affiliate.location)) {
-        locations.push(each.affiliate.location);
-      }
-      return locations;
+    props.news.forEach((eachNews) => {
+      eachNews.affiliate.forEach((eachAffiliate) => {
+        if (!locations.includes(eachAffiliate.location)) {
+          locations.push(eachAffiliate.location);
+        }
+        return locations;
+      });
     });
   }
 
@@ -27,9 +29,20 @@ export default function SearchNews(props) {
       );
     }
     if (search.location.length > 0) {
-      result = result.filter(
-        (each) => each.affiliate.location === search.location
-      );
+      if (search.location === "All") {
+        result = result.filter((each) => each.affiliate.length === 5);
+      } else {
+        result = result.filter((each) => {
+          let affiliateLocation = [];
+          each.affiliate.forEach((eachAffiliate) => {
+            affiliateLocation.push(eachAffiliate.location);
+          });
+          if (affiliateLocation.includes(search.location)) {
+            return true;
+          }
+          return false;
+        });
+      }
     }
     if (search.pressRelease !== null) {
       result = result.filter(
@@ -37,6 +50,7 @@ export default function SearchNews(props) {
       );
     }
     props.setDisplay(result);
+    props.setPageNumber(0);
   }
 
   function handleChange(event) {

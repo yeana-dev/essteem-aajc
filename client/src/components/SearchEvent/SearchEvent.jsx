@@ -7,13 +7,15 @@ export default function SearchEvent(props) {
     virtual: null,
   });
 
-  let locations = [];
+  let locations = ["All"];
 
   if (props.events && props.events.length > 0) {
-    props.events.map((event) => {
-      if (!locations.includes(event.affiliate.location)) {
-        locations.push(event.affiliate.location);
-      }
+    props.events.forEach((eachEvent) => {
+      eachEvent.affiliate.forEach((eachAffiliate) => {
+        if (!locations.includes(eachAffiliate.location)) {
+          locations.push(eachAffiliate.location);
+        }
+      });
       return locations;
     });
   }
@@ -27,13 +29,25 @@ export default function SearchEvent(props) {
       );
     }
     if (search.location.length > 0) {
-      result = result.filter(
-        (each) => each.affiliate.location === search.location
-      );
+      if (search.location === "All") {
+        result = result.filter((each) => each.affiliate.length === 5);
+      } else {
+        result = result.filter((each) => {
+          let affiliateLocation = [];
+          each.affiliate.forEach((eachAffiliate) => {
+            affiliateLocation.push(eachAffiliate.location);
+          });
+          if (affiliateLocation.includes(search.location)) {
+            return true;
+          }
+          return false;
+        });
+      }
     }
     if (search.virtual !== null) {
       result = result.filter((each) => each.virtual === search.virtual);
     }
+    props.setPageNumber(0);
     props.setDisplay(result);
   }
 

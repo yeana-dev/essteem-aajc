@@ -10,6 +10,7 @@ export default {
     },
     {
       name: "link",
+      description: "Please provide https://",
       title: "Link",
       type: "url",
     },
@@ -17,6 +18,7 @@ export default {
       name: "slug",
       title: "Slug",
       type: "slug",
+      description: "Max 96 characters.",
       options: {
         source: "name",
         maxLength: 96,

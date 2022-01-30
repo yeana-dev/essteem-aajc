@@ -24,6 +24,8 @@ export default {
     {
       name: "link",
       title: "Redirect Link",
+      description:
+        "Optional. Clicking this carousel will take the user to this link as a new tab.",
       type: "url",
     },
   ],

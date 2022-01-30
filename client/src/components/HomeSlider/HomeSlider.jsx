@@ -6,7 +6,7 @@ export default function HomeSlider({ slides }) {
     <Carousel className="carousel w-full h-max mx-auto object-none">
       {slides.map((slide) => (
         <Carousel.Item>
-          <a href={slide.link}>
+          <a href={slide.link} target="_blank" rel="noreferrer">
             <img
               className="d-block w-full h-96"
               src={slide.image.asset.url}

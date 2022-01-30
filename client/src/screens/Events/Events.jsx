@@ -5,7 +5,7 @@ import SearchEvent from "../../components/SearchEvent/SearchEvent";
 import EventCard from "../../components/EventCard/EventCard";
 
 export default function Event() {
-  const [events, setEvents] = useState(null);
+  const [events, setEvents] = useState([]);
   const [display, setDisplay] = useState([]);
   const [pageNumber, setPageNumber] = useState(0);
 
@@ -15,10 +15,7 @@ export default function Event() {
         `*[_type == "event"]{
       title,
       slug,
-      affiliate->{
-        name,
-        location
-      },
+      affiliate[]->{name,location},
       mainImage{
         asset->{
           _id,
@@ -50,7 +47,11 @@ export default function Event() {
   return (
     <div className="max-w-6xl w-full mx-auto px-10 py-5">
       <h1 className="font-bold text-2xl ">Attend an Event</h1>
-      <SearchEvent events={events} setDisplay={setDisplay} />
+      <SearchEvent
+        events={events}
+        setDisplay={setDisplay}
+        setPageNumber={setPageNumber}
+      />
       <div className="w-full flex flex-col gap-10">
         <h2 className="uppercase font-semibold text-lg">Upcoming</h2>
         {display &&
