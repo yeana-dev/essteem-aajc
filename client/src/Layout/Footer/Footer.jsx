@@ -16,9 +16,22 @@ export default function Footer() {
           <section className="flex flex-col justify-center sm:w-4/12 text-center gap-5 items-center sm:items-start">
             <img src={logo} width="120" alt="" />
             <div className="text-xs font-normal sm:text-left">
-              Some rights reserved. All images used are licensed under the
-              Creative Commons License. Please contact your local affiliate to
-              learn more about our work.
+              <p>
+                Some rights reserved. All images used are licensed under the
+                Creative Commons License. Please contact your local affiliate to
+                learn more about our work.
+              </p>
+              <p className="mt-4">
+                Structured content powered by{" "}
+                <a
+                  href="https://www.sanity.io"
+                  target="_blank"
+                  rel="noopener norefer"
+                  className="underline"
+                >
+                  Sanity.io
+                </a>
+              </p>
             </div>
           </section>
           <section className="flex flex-col gap-4 text-center">
