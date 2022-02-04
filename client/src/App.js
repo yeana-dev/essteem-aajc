@@ -8,6 +8,7 @@ import SingleAboutUs from "./screens/SingleAboutUs/SingleAboutUs";
 import News from "./screens/News/News";
 import Events from "./screens/Events/Events";
 import Donate from "./screens/Donate/Donate";
+import PrivacyPolicy from "./screens/PrivacyPolicy";
 import ScrollToTop from "./ScrollToTop";
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
             <Route path="/news" element={<News />} />
             <Route path="/events" element={<Events />} />
             <Route path="/donate" element={<Donate />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           </Routes>
         </Layout>
       </ScrollToTop>
