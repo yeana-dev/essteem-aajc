@@ -40,7 +40,12 @@ export default function SingleAboutUs() {
               <p className="leading-loose">{affiliate.bio}</p>
               <p className="text-sm font-semibold">
                 To learn more about our work and donate, please visit our{" "}
-                <a href={affiliate.link} className="underline">
+                <a
+                  href={affiliate.link}
+                  className="underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   main site
                 </a>
                 .
