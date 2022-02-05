@@ -21,7 +21,7 @@ export default function Footer() {
                 <a
                   href="https://www.sanity.io"
                   target="_blank"
-                  rel="noopener norefer"
+                  rel="noopener noreferrer"
                   className="underline"
                 >
                   Sanity.io
