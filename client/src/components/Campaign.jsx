@@ -29,25 +29,27 @@ export default function Campaign(props) {
   }, []);
 
   return (
-    <div className="my-20">
-      <h1 className="text-2xl font-bold text-center mb-20">
-        Affiliation-Wide Campaigns
-      </h1>
-      <div className="affliationWideCampaigns flex flex-col sm:flex-row flex-wrap gap-12 justify-evenly">
+    <section className="my-20">
+      <header>
+        <h1 className="text-2xl font-bold text-center mb-20">
+          Affiliation-Wide Campaigns
+        </h1>
+      </header>
+      <main className="affliationWideCampaigns flex flex-col sm:flex-row flex-wrap gap-12 justify-evenly">
         {campaigns !== null && (
           <>
             {campaigns.map((campaign) => (
-              <div className="item sm:w-5/12 flex flex-col gap-3">
+              <section className="item sm:w-5/12 flex flex-col gap-3">
                 <img src={urlFor(campaign.image.asset.url).url()} alt="" />
                 <PortableText
                   content={campaign.body}
                   className="text-sm text-center"
                 />
-              </div>
+              </section>
             ))}
           </>
         )}
-      </div>
-    </div>
+      </main>
+    </section>
   );
 }
