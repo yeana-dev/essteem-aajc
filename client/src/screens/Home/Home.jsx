@@ -1,38 +1,12 @@
 import "./Home.css";
-import sanityClient from "../../client";
-import { useState, useEffect } from "react";
 import HomeEvent from "../../components/HomeEvent/HomeEvent";
 import HomeSlider from "../../components/HomeSlider/HomeSlider";
-
-import StandAgainstHatred from "../../assets/StandAgainstHatred.png";
-import hollaback from "../../assets/bystander.png";
-import supportFamilies from "../../assets/valueOurFamilies.png";
-import votingRight from "../../assets/votingright.png";
+import Campaign from "../../components/Campaign";
 
 export default function Home() {
-  const [slides, setSlides] = useState(null);
-  useEffect(() => {
-    sanityClient
-      .fetch(
-        `*[_type == "carousel"]{
-      heading,
-      subHeading,
-      link,
-      image{
-        asset->{
-          _id,
-          url
-        },
-      },
-    }`
-      )
-      .then((data) => setSlides(data))
-      .catch(console.error);
-  }, []);
-
   return (
     <div>
-      {slides && <HomeSlider slides={slides} />}
+      <HomeSlider />
       <div className="home max-w-6xl mx-auto px-4">
         <header className="text-center flex flex-col gap-5 my-5">
           <h3 className="text-lg font-semibold">Our Mission</h3>
@@ -109,162 +83,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="affiliation-wide">
-          <h1 className="text-2xl font-bold text-center">
-            Affiliation-Wide Campaigns
-          </h1>
-          <div className="affliationWideCampaigns flex flex-col sm:flex-row flex-wrap gap-12 justify-evenly">
-            <div className="item sm:w-5/12 flex flex-col gap-3">
-              <img className="imageCol" src={StandAgainstHatred} alt="" />
-              <p className="text-sm">
-                We encourage community members who have experienced anti-Asian
-                hate to share their experiences and report to our website
-                StandAgainstHatred.org. We document hate crimes, harassment, and
-                discrimination experienced by our community.
-              </p>
-              <a
-                href="https://www.standagainsthatred.org/"
-                target="_blank"
-                rel="noreferrer"
-                className="underline text-sm uppercase text-center"
-              >
-                standagainsthatred.org
-              </a>
-            </div>
-
-            <div className="item sm:w-5/12 flex flex-col gap-3">
-              <img className="imageCol" src={hollaback} alt="" />
-              <p className="text-sm">
-                We believe every person can safely take action against incidents
-                of anti-Asian hate. Register for free training with any of our
-                affiliates below.
-              </p>
-              <ul className="refs flex flex-wrap gap-3 justify-center underline uppercase text-sm">
-                <li>
-                  <a
-                    href="https://www.ihollaback.org/bystanderintervention/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Atlanta
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.advancingjustice-chicago.org/what-we-do/bystander-intervention-trainings/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Chicago
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://advancingjustice-la.org/bystander-intervention-trainings/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Los Angeles
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://www.advancingjustice-alc.org/stop-anti-asian-hate/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    ALC (San Francisco)
-                  </a>
-                </li>
-                <li>
-                  <a
-                    href="https://advancingjustice-aajc.org/anti-asian-hate"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    AAJC (Washington D.C.)
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="item sm:w-5/12 flex flex-col gap-3">
-              <img className="imageCol" src={supportFamilies} alt="" />
-              <p className="text-sm">
-                We exist to protect, preserve, and strengthen the family
-                immigration system and promote an immigration system that is
-                informed by love, empathy, and justice.
-              </p>
-              <a
-                href="https://www.valueourfamilies.org/"
-                target="_blank"
-                rel="noreferrer"
-                className="underline text-sm uppercase text-center"
-              >
-                valueourfamilies.org
-              </a>
-            </div>
-
-            <div className="item sm:w-5/12 flex flex-col gap-3">
-              <img className="imageCol" src={votingRight} alt="" />
-              <p className="text-sm">
-                The Voting Rights Project has created several tools for
-                community-based organizations to use to educate their community
-                members about the voting process.
-              </p>
-
-              <div className="refs">
-                <ul className="refs flex flex-wrap gap-3 justify-center underline uppercase text-sm">
-                  <li>
-                    <a
-                      href="https://www.advancingjustice-atlanta.org/voting-elections"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Atlanta
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.advancingjustice-chicago.org/what-we-do/civic-engagement/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Chicago
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://advancingjustice-la.org/advocacy/laws-and-issues-essential-to-well-being/voting-rights/voting-rights-tools-and-resources/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Los Angeles
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.advancingjustice-alc.org/programs/voting-rights/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      ALC (San Francisco)
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      href="https://www.advancingjustice-aajc.org/know-your-rights"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      AAJC (Washington D.C.)
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Campaign />
         <HomeEvent />
       </div>
     </div>
