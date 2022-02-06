@@ -25,6 +25,6 @@ export default function PrivacyPolicy() {
       </main>
     );
   } else {
-    return <h1>Loading</h1>;
+    return null;
   }
 }
