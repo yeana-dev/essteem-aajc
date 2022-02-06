@@ -26,7 +26,13 @@ export default {
       title: "Redirect Link",
       description:
         "Optional. Clicking this carousel will take the user to this link as a new tab.",
-      type: "url",
+      type: "string",
+    },
+    {
+      name: "order",
+      title: "Order",
+      type: "number",
+      hidden: true,
     },
   ],
   preview: {
