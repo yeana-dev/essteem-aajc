@@ -49,12 +49,15 @@ export default function News() {
         setPageNumber={setPageNumber}
       />
       <main>
-        <h2 className="uppercase text-lg font-semibold mb-10">Latest</h2>
         <div className="flex flex-wrap gap-4 justify-center">
           {display && display.length > 0 ? (
             display
               .slice(pagesVisited, pagesVisited + newsPerPage)
-              .map((item) => <NewsCard key={item._id} news={item} />)
+              .map((item) => (
+                <section className="newsCard">
+                  <NewsCard key={item._id} news={item} />
+                </section>
+              ))
           ) : (
             <h1>No news to be displayed</h1>
           )}

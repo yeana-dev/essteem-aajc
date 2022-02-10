@@ -1,10 +1,5 @@
 import { Link } from "react-router-dom";
-
 import logo from "../../assets/flame-logo.png";
-import twitterLogo from "../../assets/twitter.png";
-import instagramLogo from "../../assets/instagram.png";
-import facebookLogo from "../../assets/facebook.png";
-import githubLogo from "../../assets/github.png";
 import HelpDonate from "../../components/HelpDonate/HelpDonate";
 
 export default function Footer() {
@@ -21,16 +16,22 @@ export default function Footer() {
                 Creative Commons License. Please contact your local affiliate to
                 learn more about our work.
               </p>
-              <p className="mt-4">
+              <p className="my-4">
                 Structured content powered by{" "}
                 <a
                   href="https://www.sanity.io"
                   target="_blank"
-                  rel="noopener norefer"
+                  rel="noopener noreferrer"
                   className="underline"
                 >
                   Sanity.io
                 </a>
+              </p>
+              <p>
+                © 2022 Asian Americans Advancing Justice |{" "}
+                <Link to="/privacy-policy" className="underline">
+                  Privacy Policy
+                </Link>
               </p>
             </div>
           </section>
@@ -63,31 +64,6 @@ export default function Footer() {
               <li>Voting Rights</li>
               <li>Events</li>
               <li>Donations</li>
-            </ul>
-          </section>
-          <section className="flex flex-col gap-4 text-center">
-            <header className="font-bold sm:text-left">Follow Us</header>
-            <ul className="flex gap-7 justify-center sm:justify-start">
-              <li>
-                <a href="https://twitter.com/Adv_Justice">
-                  <img src={twitterLogo} alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={facebookLogo} alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={instagramLogo} alt="" />
-                </a>
-              </li>
-              <li>
-                <a href="/">
-                  <img src={githubLogo} alt="" />
-                </a>
-              </li>
             </ul>
           </section>
         </div>

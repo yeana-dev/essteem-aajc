@@ -1,0 +1,14 @@
+.newsDetail p {
+  margin: 2rem 0;
+}
+
+.newsDetail a {
+  text-decoration: underline;
+  color: #f57b20;
+}
+
+@media (min-width: 768px) {
+  .latestNews {
+    width: 48%;
+  }
+}

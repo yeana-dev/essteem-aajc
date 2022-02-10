@@ -36,14 +36,24 @@ export default {
     {
       name: "link",
       title: "Redirect Link",
+      description:
+        "If this area is filled, User will be redirected to this site by clicking this news. Otherwise, please provide the article to the below 'Article' section.",
       type: "url",
     },
     {
       name: "body",
       title: "Body",
       type: "text",
+      description:
+        "This is a preview of this article displayed on the news list.",
       validation: (Rule) =>
         Rule.required().max(200).error("Maximum 200 characters"),
+    },
+    {
+      name: "article",
+      title: "Article",
+      type: "array",
+      of: [{ type: "block" }],
     },
   ],
 
