@@ -29,7 +29,7 @@ export default function HomeSlider() {
     return (
       <>
         <img
-          className="d-block w-full h-96"
+          className="object-cover d-block w-full h-96"
           src={slide.image.asset.url}
           alt=""
         />
