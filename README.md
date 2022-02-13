@@ -78,6 +78,7 @@ We’re hoping this new website can better serve as a portal that 1) explains th
 - [React.js](https://reactjs.org/)
 - [TailwindCSS](https://tailwindcss.com)
 - [Sanity.io](https://sanity.io/)
+- [Bootstrap](https://getbootstrap.com/)
 
 <p align="right"><a href="#top">back to top</a></p>
 
@@ -131,8 +132,8 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 - [x] Create CMS database
 - [x] Build schemas
 - [x] Deploy the Sanity studio
-- [ ] Connect the sanity CMS to front-end
-- [ ] Build react architecture
+- [x] Connect the sanity CMS to front-end
+- [x] Build react architecture
 
 <p align="right"><a href="#top">back to top</a></p>
 
