@@ -6,3 +6,9 @@ nav .active,
 .mobile-menu .active {
   font-weight: 600;
 }
+
+@media (min-width: 768px) {
+  nav:hover {
+    color: #f57b20;
+  }
+}
