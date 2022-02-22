@@ -49,8 +49,11 @@ export default function NewsDetail() {
               <li className="uppercase bg-aajc-lightorange text-aajc-darkgrey text-sm font-bold px-2 py-1 rounded-lg">
                 {news.press_release ? "Press Release" : "News"}
               </li>
-              {news.affiliate.map((city) => (
-                <li className="uppercase bg-aajc-darkgrey text-white text-sm font-bold px-2 py-1 rounded-lg">
+              {news.affiliate.map((city, key) => (
+                <li
+                  key={key}
+                  className="uppercase bg-aajc-darkgrey text-white text-sm font-bold px-2 py-1 rounded-lg"
+                >
                   {city.location}
                 </li>
               ))}
@@ -65,8 +68,8 @@ export default function NewsDetail() {
             Latest News
           </h2>
           <section className="flex flex-wrap gap-2 justify-between">
-            {otherNews.map((news) => (
-              <div className="latestNews">
+            {otherNews.map((news, key) => (
+              <div className="latestNews" key={key}>
                 <NewsCard news={news} />
               </div>
             ))}

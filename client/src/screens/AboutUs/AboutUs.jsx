@@ -51,8 +51,11 @@ export default function AboutUs(props) {
         </header>
         <div className="flex py-10 flex-wrap">
           {affiliates &&
-            affiliates.map((affiliate) => (
-              <div className="flex flex-col gap-2 items-center px-3 w-52 my-2 justify-start mx-auto">
+            affiliates.map((affiliate, key) => (
+              <div
+                key={key}
+                className="flex flex-col gap-2 items-center px-3 w-52 my-2 justify-start mx-auto"
+              >
                 <img
                   src={urlFor(affiliate.image.asset.url).width(300).url()}
                   alt=""
