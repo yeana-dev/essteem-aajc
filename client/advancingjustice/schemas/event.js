@@ -41,6 +41,9 @@ export default {
       name: "date",
       title: "Event Date / Time",
       type: "date",
+      options: {
+        dateFormat: "MMM D, YYYY",
+      },
     },
     {
       name: "virtual",
