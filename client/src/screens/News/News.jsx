@@ -18,14 +18,22 @@ export default function News() {
       slug,
       affiliate[]->{name,location},
       press_release,
-      publishedAt,
+      publishedDate,
       body,
       link
     }`
       )
       .then((data) => {
-        setNews(data);
-        setDisplay(data);
+        setNews(
+          data.sort(
+            (a, b) => new Date(b.publishedDate) - new Date(a.publishedDate)
+          )
+        );
+        setDisplay(
+          data.sort(
+            (a, b) => new Date(b.publishedDate) - new Date(a.publishedDate)
+          )
+        );
       })
       .catch(console.error);
   }, []);
@@ -53,9 +61,9 @@ export default function News() {
           {display && display.length > 0 ? (
             display
               .slice(pagesVisited, pagesVisited + newsPerPage)
-              .map((item) => (
-                <section className="newsCard">
-                  <NewsCard key={item._id} news={item} />
+              .map((item, key) => (
+                <section className="newsCard" key={key}>
+                  <NewsCard news={item} />
                 </section>
               ))
           ) : (
