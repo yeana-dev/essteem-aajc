@@ -38,8 +38,11 @@ export default function Donate() {
       <img src={donateHeader} alt="" className="my-10 rounded" />
       <div className="flex flex-col gap-4">
         {donations &&
-          donations.map((donation) => (
-            <div className="bg-aajc-yellowWhite rounded-md px-5 py-3 flex sm:flex-row flex-col gap-3 text-center sm:text-left justify-between items-center">
+          donations.map((donation, key) => (
+            <div
+              key={key}
+              className="bg-aajc-yellowWhite rounded-md px-5 py-3 flex sm:flex-row flex-col gap-3 text-center sm:text-left justify-between items-center"
+            >
               <h1 className="font-semibold text-lg">
                 {donation.affiliate.name}
               </h1>

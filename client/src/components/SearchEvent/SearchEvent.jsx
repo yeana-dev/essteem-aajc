@@ -70,7 +70,7 @@ export default function SearchEvent(props) {
       className="flex w-full my-10 flex-col sm:flex-row"
       onSubmit={(e) => handleSubmit(e)}
     >
-      <label for="search" />
+      <label htmlFor="search" />
       <input
         type="text"
         id="search"
@@ -81,7 +81,7 @@ export default function SearchEvent(props) {
         className="p-3 sm:border border-t border-l border-r border-solid border-dark flex-shrink sm:w-2/3 text-sm"
         onChange={(event) => handleChange(event)}
       />
-      <label for="location" />
+      <label htmlFor="location" />
       <select
         name="location"
         id="location"
@@ -90,19 +90,20 @@ export default function SearchEvent(props) {
         onChange={(event) => handleChange(event)}
       >
         <option
-          value=""
-          selected
+          value="Default"
           disabled
           hidden
           onChange={(event) => handleChange(event)}
         >
           Location
         </option>
-        {locations.map((location) => (
-          <option value={location}>{location}</option>
+        {locations.map((location, key) => (
+          <option value={location} key={key}>
+            {location}
+          </option>
         ))}
       </select>
-      <label for="type" />
+      <label htmlFor="type" />
       <select
         id="type"
         name="virtual"

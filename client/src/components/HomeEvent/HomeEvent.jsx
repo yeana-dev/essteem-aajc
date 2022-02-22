@@ -48,7 +48,8 @@ export default function HomeEvent() {
           See all events
         </Link>
       </header>
-      {events && events.map((event) => <EventCard event={event} />)}
+      {events &&
+        events.map((event, key) => <EventCard event={event} key={key} />)}
     </div>
   );
 }

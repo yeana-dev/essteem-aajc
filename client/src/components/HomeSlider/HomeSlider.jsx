@@ -46,8 +46,8 @@ export default function HomeSlider() {
   if (slides && slides.length > 0) {
     return (
       <Carousel className="carousel w-full h-max mx-auto object-none">
-        {slides.map((slide) => (
-          <Carousel.Item>
+        {slides.map((slide, key) => (
+          <Carousel.Item key={key}>
             {slide.link ? (
               <Link to={slide.link}>{carousel(slide)}</Link>
             ) : (

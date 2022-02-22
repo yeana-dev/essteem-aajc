@@ -30,8 +30,8 @@ export default function Event() {
     }`
       )
       .then((data) => {
-        setEvents(data);
-        setDisplay(data);
+        setEvents(data.sort((a, b) => new Date(b.date) - new Date(a.date)));
+        setDisplay(data.sort((a, b) => new Date(b.date) - new Date(a.date)));
       })
       .catch(console.error);
   }, []);
@@ -57,7 +57,7 @@ export default function Event() {
         {display &&
           display
             .slice(pagesVisited, pagesVisited + newsPerPage)
-            .map((event) => <EventCard event={event} />)}
+            .map((event, key) => <EventCard key={key} event={event} />)}
       </div>
       <ReactPaginate
         previousLabel={"<"}

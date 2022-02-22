@@ -29,8 +29,8 @@ export default {
       type: "boolean",
     },
     {
-      name: "publishedAt",
-      title: "Published at",
+      name: "publishedDate",
+      title: "Published Date",
       type: "date",
     },
     {

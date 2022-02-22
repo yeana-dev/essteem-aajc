@@ -38,8 +38,8 @@ export default function Campaign(props) {
       <main className="affliationWideCampaigns flex flex-col sm:flex-row flex-wrap gap-12 justify-evenly">
         {campaigns !== null && (
           <>
-            {campaigns.map((campaign) => (
-              <section className="item sm:w-5/12 flex flex-col gap-3">
+            {campaigns.map((campaign, key) => (
+              <section key={key} className="item sm:w-5/12 flex flex-col gap-3">
                 <img src={urlFor(campaign.image.asset.url).url()} alt="" />
                 <PortableText
                   content={campaign.body}

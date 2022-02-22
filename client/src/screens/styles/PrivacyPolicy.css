@@ -1,0 +1,37 @@
+.privacy_policy * {
+  list-style: inside;
+  list-style-type: disc;
+}
+
+.privacy_policy *:not(ul, li) {
+  margin: 20px 0;
+}
+
+.privacy_policy a {
+  color: #f57b20;
+  text-decoration: underline;
+}
+
+.privacy_policy h1 {
+  font-size: 2.5rem;
+}
+
+.privacy_policy h2 {
+  font-size: 2rem;
+}
+
+.privacy_policy h3 {
+  font-size: 1.75rem;
+}
+
+.privacy_policy h4 {
+  font-size: 1.5rem;
+}
+
+.privacy_policy h5 {
+  font-size: 1.25rem;
+}
+
+.privacy_policy h6 {
+  font-size: 1rem;
+}
