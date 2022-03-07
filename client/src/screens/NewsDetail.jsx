@@ -17,7 +17,7 @@ export default function NewsDetail() {
       slug,
       affiliate[]->{name,location},
       press_release,
-      publishedAt,
+      publishedDate,
       article,
       body
     }`
@@ -32,6 +32,25 @@ export default function NewsDetail() {
   }, [slug]);
 
   if (news && otherNews) {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+    let newDate = news.publishedDate.split("-");
+    let month = 0;
+    newDate[1] < 10
+      ? (month = months[newDate[1].slice(1)])
+      : (month = months[newDate[1]]);
     return (
       <div className="max-w-6xl w-full mx-auto p-10">
         <Link to="/news" className="underline text-sm">
@@ -42,7 +61,9 @@ export default function NewsDetail() {
             <h1 className="text-4xl font-bold tracking-tight mb-2 text-aajc-orange">
               {news.title}
             </h1>
-            <h2>Published on {news.publishedAt}</h2>
+            <h2>
+              Published on {month} {newDate[2]}, {newDate[0]}
+            </h2>
           </header>
           <section>
             <ul className="flex flex-wrap gap-2">
